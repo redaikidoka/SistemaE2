@@ -1,0 +1,254 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap.scss";
+// endbower
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+/* Space out content a bit */
+body {
+
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+  border-bottom: 1px solid #e5e5e5;
+
+  /* Make the masthead heading the same height as the navigation */
+  h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
+    padding-bottom: 19px;
+  }
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+
+  .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+  }
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+
+  p + h4 {
+    margin-top: 28px;
+  }
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
+
+
+
+/*
+ * Global add-ons
+ */
+/* app css stylesheet */
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+.menu > li:nth-child(1):before {
+  content: "";
+  padding: 0;
+}
+
+.sub-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+/*
+ * Top navigation
+ * Hide default border to remove 1px line.
+ */
+.navbar-fixed-top {
+  border: 0;
+}
+
+
+/*
+ * Main content
+ */
+
+.main {
+  padding: 20px;
+}
+
+#character {
+
+
+
+.mote {
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    display: inline;
+}
+
+dd .mote {
+    width: 18px;
+    height: 18px;
+    display: inline;
+}
+
+.mote-solar, .solar {
+    color: #CDB11F;
+}
+.mote-empty {
+    opacity: 25%;
+    color: #ccc;
+}
+
+span.mote-empty {
+    color: #646464;
+    opacity: 100%;
+}
+
+/* dark yellow: CDB11F
+    light yellow:  CDCB80
+*/
+
+.panel-title {
+    
+    color: #333 ;
+    text-shadow:
+    -1px -1px 0 #CDCB80,
+    1px -1px 0 #CDCB80,
+    -1px 1px 0 #CDCB80,
+    1px 1px 0 #CDCB80;
+}
+
+.panel-heading {
+    background-color: #CDCB80 !important;
+}
+
+/* Popup heading zap-around navigator */
+.navigator {
+    background-color: #A4A821; 
+    z-index: 10;
+}
+
+.navigator a {
+    color: #FFF425;
+}
+
+.navicon { color: #FFF425; }
+
+
+.list-group-item {
+  padding: 5px 10px;
+}
+
+.list-group .ability-list{
+  max-width: 260px;
+}
+
+
+
+.favored {
+  /* font-style:italic; */
+  font-weight: bold;
+}
+
+.excellency {
+  background-color: #ccc;
+  color: #333;
+  font-weight: normal;
+  font-size:smaller;
+}
+
+.stat {
+  font-variant: normal;
+  text-transform: capitalize;
+  font-style: normal; 
+}
+
+.ability {
+  text-transform: capitalize;
+
+}
+
+.specialty {
+  font-size: 11px;
+  font-style: italic;
+  margin: 0 10px; 
+
+}
+
+}

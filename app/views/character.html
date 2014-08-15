@@ -1,0 +1,38 @@
+<section id="character" class="container-fluid">
+  <div class="row">
+    <div class="main">
+      <!-- CHARACTER SHEET AREA -->
+      <div class="row ">
+        <!-- CHARACTER HEADER : Should we use a <header>? -->
+        <div class="col-xs-3 col-sm-3 placeholders text-center">
+          <img src="images/caste/zenith-fancy.jpg" class="img-responsive center-block " alt="Zenith">
+          <h4 class="text-uppercase text-center ">{{character.caste }}</h4>
+          <span class="text-muted text-center ">{{ character.anima }}</span>
+        </div>
+        <div class="col-xs-6 col-sm-9 ">
+          <h2>{{ character.name }}</h2>
+          <dl class="dl-horizontal">
+            <dt>Concept</dt>
+            <dd>{{ character.concept }}</dd>
+            <dt>Motivation</dt>
+            <dd>{{ character.motivation }}</dd>
+            <dt>Anima Banner</dt>
+            <dd>{{ character.anima_banner}}</dd>
+          </dl>
+        </div>
+      </div>
+      <div class="row" ng-include="'views/character/attributes.html'" ><!-- Display row -->
+      </div><!-- Display row -->
+
+      <div class="row " ng-include="'views/character/abilities.html'" ><!-- Display row -->      
+     </div><!-- Display row -->
+
+      <div class="row" ng-include="'views/character/advantages.html'" ><!--  ng-include="'partials/character/advantages.html'"  Display row --> 
+     
+      </div><!-- Display row -->
+
+    </div>
+  </div>
+</section>
+
+
