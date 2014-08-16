@@ -326,6 +326,238 @@ angular.module('sistemaApp')
                       "favored": false
                   }
               },
+
+              "ability": [
+                  {
+                      "name": "archery",
+                      "abr": "arch",
+                      "min": 0,
+                      "max": 5,
+                      "value": 5,
+                      "caste": "dawn",
+                      "favored": true,
+                      "specialties": [{
+                          "name": "Long Shot",
+                          "value": 2
+                      }]
+                  },
+                 {
+                      "name": "martial arts",
+                      "abr": "ma",
+                      "min": 0,
+                      "max": 5,
+                      "value": 0,
+                      "caste": "dawn",
+                      "favored": false
+                  },
+                  {
+                      "name": "melee",
+                      "abr": "mel",
+                      "min": 0,
+                      "max": 5,
+                      "value": 0,
+                      "caste": "dawn",
+                      "favored": false
+                  },
+                   {
+                      "name": "thrown",
+                      "abr": "thr",
+                      "min": 0,
+                      "max": 5,
+                      "value": 0,
+                      "caste": "dawn",
+                      "favored": false
+                  },
+                  {
+                      "name": "war",
+                      "abr": "war",
+                      "min": 0,
+                      "max": 5,
+                      "value": 0,
+                      "caste": "dawn",
+                      "favored": false
+                  },
+                  {
+                      "name": "athletics",
+                      "abr": "ath",
+                      "min": 0,
+                      "max": 5,
+                      "value": 3,
+                      "caste": "night",
+                      "favored": true
+                  },
+                  {
+                      "name": "awareness",
+                      "abr": "awa",
+                      "min": 0,
+                      "max": 5,
+                      "value": 3,
+                      "caste": "night",
+                      "favored": true
+                  },
+                  {
+                      "name": "dodge",
+                      "abr": "dod",
+                      "min": 0,
+                      "max": 5,
+                      "value": 5,
+                      "caste": "night",
+                      "favored": true
+                  },
+                  {
+                      "name": "larceny",
+                      "abr": "lar",
+                      "min": 0,
+                      "max": 5,
+                      "value": 1,
+                      "caste": "night",
+                      "favored": true
+                  },
+                  {
+                      "name": "stealth",
+                      "abr": "stlh",
+                      "min": 0,
+                      "max": 5,
+                      "value": 3,
+                      "caste": "night",
+                      "favored": true
+                  },
+                 {
+                      "name": "integrity",
+                      "abr": "intg",
+                      "min": 0,
+                      "max": 5,
+                      "value": 1,
+                      "caste": "zenith",
+                      "favored": true
+                  },
+                  {
+                      "name": "performance",
+                      "abr": "perf",
+                      "min": 0,
+                      "max": 5,
+                      "value": 0,
+                      "caste": "zenith",
+                      "favored": false
+                  },
+                  {
+                      "name": "presence",
+                      "abr": "pres",
+                      "min": 0,
+                      "max": 5,
+                      "value": 1,
+                      "caste": "zenith",
+                      "favored": false
+                  },
+                  {
+                      "name": "resistance",
+                      "abr": "rsst",
+                      "min": 0,
+                      "max": 5,
+                      "value": 2,
+                      "caste": "zenith",
+                      "favored": false
+                  },
+                 {
+                      "name": "survival",
+                      "abr": "surv",
+                      "min": 0,
+                      "max": 5,
+                      "value": 1,
+                      "caste": "zenith",
+                      "favored": false
+                  },
+                  {
+                      "name": "bureaucracy",
+                      "abr": "bure",
+                      "min": 0,
+                      "max": 5,
+                      "value": 0,
+                      "caste": "eclipse",
+                      "favored": false
+                  },
+                  {
+                      "name": "linguistics",
+                      "abr": "ling",
+                      "min": 0,
+                      "max": 5,
+                      "value": 1,
+                      "caste": "eclipse",
+                      "favored": false
+                  },
+                  {
+                      "name": "ride",
+                      "abr": "ride",
+                      "min": 0,
+                      "max": 5,
+                      "value": 0,
+                      "caste": "eclipse",
+                      "favored": false
+                  },
+                  {
+                      "name": "sail",
+                      "abr": "sail",
+                      "min": 0,
+                      "max": 5,
+                      "value": 0,
+                      "caste": "eclipse",
+                      "favored": false
+                  },
+                 {
+                      "name": "socialize",
+                      "abr": "socl",
+                      "min": 0,
+                      "max": 5,
+                      "value": 1,
+                      "caste": "eclipse",
+                      "favored": false
+                  },
+                  {
+                      "name": "craft",
+                      "abr": "craf",
+                      "min": 0,
+                      "max": 5,
+                      "value": 0,
+                      "caste": "twilight",
+                      "favored": false
+                  },
+                  {
+                      "name": "investigation",
+                      "abr": "inv",
+                      "min": 0,
+                      "max": 5,
+                      "value": 3,
+                      "caste": "twilight",
+                      "favored": true
+                  },
+                  {
+                      "name": "lore",
+                      "abr": "lore",
+                      "min": 0,
+                      "max": 5,
+                      "value": 2,
+                      "caste": "twilight",
+                      "favored": true
+                  },
+                {
+                      "name": "medicine",
+                      "abr": "medi",
+                      "min": 0,
+                      "max": 5,
+                      "value": 0,
+                      "caste": "twilight",
+                      "favored": false
+                  },
+                  {
+                      "name": "occult",
+                      "abr": "occ",
+                      "min": 0,
+                      "max": 5,
+                      "value": 0,
+                      "caste": "twilight",
+                      "favored": false
+                  }
+              ],             
               "backgrounds": {
                   "max": 5,
                   "bucket": [{
@@ -455,6 +687,30 @@ angular.module('sistemaApp')
 			//   });
 			
 		}
+}})
+.directive('saAbility', function() {
+    return {
+      restrict: 'AE',
+      scope: {
+        ability: '='
+        },
+      template: '<span class="badge"><sa-motes mote-count="ability.value" mote-max="ability.max" /></span><span class="ability" ng-class="{\'favored\' : {{ability.favored}} == true }">{{ability.name}}</span>',
+      link: function(scope, elem, attrs, ctrl ) {
+        console.log("ability: " + scope.ability);
+      
+    }
+}})
+.directive('saSpecialty', function() {
+    return {
+      restrict: 'AE',
+      scope: {
+        specialty: '='
+        },
+      template: '<br><span class="pull-right solar specialty" ><sa-motes mote-count="specialty.value" mote-max="specialty.value" /></span><div class="specialty" >{{specialty.name}}</div>',
+      link: function(scope, elem, attrs, ctrl ) {
+        console.log("specialty: " + scope.specialty);
+      
+    }
 }})
 .filter("unique", function () {
     return function (data, propertyName) {
