@@ -19,17 +19,17 @@
 								<sa-motes mote-count="character.ability[0].value" mote-max="character.ability[0].max">
 							</span>
 							</span>
-							<span class="ability" ng-class="{'favored' : {{character.ability[0].favored}} == true }">{{character.ability[0].name}}</span> <a href="#" alt="1st Archery Excellency" title="1st Archery Excellency" class="excellency">&nbsp;1&nbsp;</a>
+							<span class="ability" ng-class="{'favored' : {{character.ability[0].favored}} == true }">{{character.ability[0].name}}</span> <span ng-repeat="excellency in character.ability[0].excellencies"> <a href="#" alt="{{excellency.title}}" title="{{excellency.description}}" class="excellency">&nbsp;{{excellency.abr}}&nbsp;</a> </span>
 							<span ng-repeat="specialty in character.ability[0].specialties">
 								<br>
 								<span class="pull-right solar specialty" >
 									<sa-motes mote-count="specialty.value" mote-max="specialty.value" />
 								</span>
-								<div class="specialty" >{{specialty.name}}</div>
+								<div class="specialty" >{{specialty.name}} </div>
 							</span>
 						</li>
 						<li class="list-group-item">
-							<sa-ability ability="character.ability[0]" />
+							<sa-ability ability="character.ability[8]" />
 <a href="#" alt="1st Archery Excellency" title="1st Archery Excellency" class="excellency">&nbsp;1&nbsp;</a>
 							<span ng-repeat="eachspecialty in character.ability[0].specialties">
 								<sa-specialty specialty="eachspecialty" /> 

@@ -336,7 +336,23 @@ angular.module('sistemaApp')
                       "value": 5,
                       "caste": "dawn",
                       "favored": true,
-                      "specialties": [{
+                      "excellencies": [
+                        {
+                          "name": "1st Archery Excellency",
+                          "title": "Archery Mastery",
+                          "abr": "1",
+                          "description": "Add 2 motes/Ess to the attack pool",
+                          "cost": 1,
+                          "costRepeats": true
+                        },{
+                          "name": "3rd Archery Excellency",
+                          "abr": "3",
+                          "title": "Archery Mastery",
+                          "description":"Reroll Attack Roll",
+                          "cost": 3
+                        }
+                      ]
+                      ,"specialties": [{
                           "name": "Long Shot",
                           "value": 2
                       }]
@@ -403,6 +419,10 @@ angular.module('sistemaApp')
                       "value": 5,
                       "caste": "night",
                       "favored": true
+                       ,"specialties": [{
+                          "name": "Hauling Ass",
+                          "value": 1
+                      }]
                   },
                   {
                       "name": "larceny",
