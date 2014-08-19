@@ -152,103 +152,103 @@ body {
 
 #character {
 
+  .badge { float:right;}
+
+  .mote {
+      width: 24px;
+      height: 24px;
+      padding: 0;
+      display: inline;
+  }
+
+  dd .mote {
+      width: 18px;
+      height: 18px;
+      display: inline;
+  }
+
+  .mote-solar, .solar {
+      color: #CDB11F;
+  }
+  .mote-empty {
+      opacity: 25%;
+      color: #ccc;
+  }
+
+  span.mote-empty {
+      color: #646464;
+      opacity: 100%;
+  }
+
+  /* dark yellow: CDB11F
+      light yellow:  CDCB80
+  */
+
+  .panel-title {
+      
+      color: #333 ;
+      text-shadow:
+      -1px -1px 0 #CDCB80,
+      1px -1px 0 #CDCB80,
+      -1px 1px 0 #CDCB80,
+      1px 1px 0 #CDCB80;
+  }
+
+  .panel-heading {
+      background-color: #CDCB80 !important;
+  }
+
+  /* Popup heading zap-around navigator */
+  .navigator {
+      background-color: #A4A821; 
+      z-index: 10;
+  }
+
+  .navigator a {
+      color: #FFF425;
+  }
+
+  .navicon { color: #FFF425; }
 
 
-.mote {
-    width: 24px;
-    height: 24px;
-    padding: 0;
-    display: inline;
-}
+  .list-group-item {
+    padding: 5px 10px;
+  }
 
-dd .mote {
-    width: 18px;
-    height: 18px;
-    display: inline;
-}
-
-.mote-solar, .solar {
-    color: #CDB11F;
-}
-.mote-empty {
-    opacity: 25%;
-    color: #ccc;
-}
-
-span.mote-empty {
-    color: #646464;
-    opacity: 100%;
-}
-
-/* dark yellow: CDB11F
-    light yellow:  CDCB80
-*/
-
-.panel-title {
-    
-    color: #333 ;
-    text-shadow:
-    -1px -1px 0 #CDCB80,
-    1px -1px 0 #CDCB80,
-    -1px 1px 0 #CDCB80,
-    1px 1px 0 #CDCB80;
-}
-
-.panel-heading {
-    background-color: #CDCB80 !important;
-}
-
-/* Popup heading zap-around navigator */
-.navigator {
-    background-color: #A4A821; 
-    z-index: 10;
-}
-
-.navigator a {
-    color: #FFF425;
-}
-
-.navicon { color: #FFF425; }
-
-
-.list-group-item {
-  padding: 5px 10px;
-}
-
-.list-group .ability-list{
-  max-width: 260px;
-}
+  .list-group .ability-list{
+    max-width: 260px;
+  }
 
 
 
-.favored {
-  /* font-style:italic; */
-  font-weight: bold;
-}
+  .favored {
+    /* font-style:italic; */
+    font-weight: bold;
+  }
 
-.excellency {
-  background-color: #ccc;
-  color: #333;
-  font-weight: normal;
-  font-size:smaller;
-}
+  .excellency {
+    background-color: #ccc;
+    color: #333;
+    font-weight: normal;
+    font-size:smaller;
+  }
 
-.stat {
-  font-variant: normal;
-  text-transform: capitalize;
-  font-style: normal; 
-}
+  .stat {
+    font-variant: normal;
+    text-transform: capitalize;
+    font-style: normal; 
+  }
 
-.ability {
-  text-transform: capitalize;
+  .ability {
+    text-transform: capitalize;
 
-}
+  }
 
-.specialty {
-  font-size: 12px;
-  font-style: italic;
-  margin: 0 8px; 
+  .specialty {
+    font-size: 12px;
+    font-style: italic;
+    margin: 0 8px; 
 
-}
+  }
 
 }

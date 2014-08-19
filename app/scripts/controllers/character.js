@@ -1,3 +1,4 @@
+/*jshint quotmark: double */
 'use strict';
 
 /**
@@ -95,6 +96,80 @@ angular.module('sistemaApp')
                       "section": "mental"
                   }
               },
+              "attribute": [
+                {
+                      "name": "strength",
+                      "abr": "str",
+                      "min": 1,
+                      "max": 5,
+                      "value": 2,
+                      "section": "physical"
+                  },
+                   {
+                      "name": "dexterity",
+                      "abr": "dex",
+                      "min": 1,
+                      "max": 5,
+                      "value": 5,
+                      "section": "physical"
+                  },
+                   {
+                      "name": "stamina",
+                      "abr": "sta",
+                      "min": 1,
+                      "max": 5,
+                      "value": 2,
+                      "section": "physical"
+                  },
+                  {
+                      "name": "charisma",
+                      "abr": "cha",
+                      "min": 1,
+                      "max": 5,
+                      "value": 3,
+                      "section": "social"
+                  },
+                   {
+                      "name": "manipulation",
+                      "abr": "man",
+                      "min": 1,
+                      "max": 5,
+                      "value": 2,
+                      "section": "social"
+                  },
+                   {
+                      "name": "appearance",
+                      "abr": "app",
+                      "min": 1,
+                      "max": 5,
+                      "value": 2,
+                      "section": "social"
+                  },
+                   {
+                      "name": "perception",
+                      "abr": "app",
+                      "min": 1,
+                      "max": 5,
+                      "value": 5,
+                      "section": "mental"
+                  },
+                   {
+                      "name": "intelligence",
+                      "abr": "int",
+                      "min": 1,
+                      "max": 5,
+                      "value": 3,
+                      "section": "mental"
+                  },
+                  {
+                      "name": "wits",
+                      "abr": "wit",
+                      "min": 1,
+                      "max": 5,
+                      "value": 3,
+                      "section": "mental"
+                  }
+              ],
               "abilities": {
                   "archery": {
                       "name": "archery",
@@ -339,7 +414,7 @@ angular.module('sistemaApp')
                       "excellencies": [
                         {
                           "name": "1st Archery Excellency",
-                          "title": "Archery Mastery",
+                          "title": "Archery Overwhelming",
                           "abr": "1",
                           "description": "Add 2 motes/Ess to the attack pool",
                           "cost": 1,
@@ -347,9 +422,9 @@ angular.module('sistemaApp')
                         },{
                           "name": "3rd Archery Excellency",
                           "abr": "3",
-                          "title": "Archery Mastery",
+                          "title": "Essence Resurgent",
                           "description":"Reroll Attack Roll",
-                          "cost": 3
+                          "cost": 4
                         }
                       ]
                       ,"specialties": [{
@@ -418,8 +493,8 @@ angular.module('sistemaApp')
                       "max": 5,
                       "value": 5,
                       "caste": "night",
-                      "favored": true
-                       ,"specialties": [{
+                      "favored": true,
+                       "specialties": [{
                           "name": "Hauling Ass",
                           "value": 1
                       }]
@@ -548,7 +623,17 @@ angular.module('sistemaApp')
                       "max": 5,
                       "value": 3,
                       "caste": "twilight",
-                      "favored": true
+                      "favored": true,
+                       "excellencies": [
+                        {
+                          "name": "2nd Investigation Excellency",
+                          "title": "Essence Triumphant",
+                          "abr": "2",
+                          "description": "Add 1 success to the die pool",
+                          "cost": 2,
+                          "costRepeats": true
+                        }
+                      ]
                   },
                   {
                       "name": "lore",
@@ -679,10 +764,6 @@ angular.module('sistemaApp')
     template: '<span ng-repeat="mote in motes" class="glyphicon glyphicon-certificate" ng-class="{\'mote-empty\':$index>moteCount-1}"> </span>',
 		link: function(scope, elem, attrs, ctrl ) {
 			scope.motes = []; 
-			// console.log(" mote count: " + scope.moteCount);
-			// console.log(" mote max: " + scope.moteMax);
-			// console.log(" stat: " + scope.statName);
-			
 			// console.log(scope.statName + ": " + scope.moteCount + " / " + scope.moteMax);
 
 			if ( angular.isNumber(scope.moteMax) ) {
@@ -714,10 +795,13 @@ angular.module('sistemaApp')
       scope: {
         ability: '='
         },
-      template: '<span class="badge"><sa-motes mote-count="ability.value" mote-max="ability.max" /></span><span class="ability" ng-class="{\'favored\' : {{ability.favored}} == true }">{{ability.name}}</span>',
+      template: '<div class="badge"><sa-motes mote-count="ability.value" mote-max="ability.max" ></div><span class="ability" ng-class="{\'favored\' : {{ability.favored}} == true }">{{ability.name}}</span> ',
       link: function(scope, elem, attrs, ctrl ) {
-        console.log("ability: " + scope.ability);
-      
+        console.log("ability: " + scope.ability.name + " " + scope.ability.value + "/" + scope.ability.max);
+
+        if (scope.ability.excellencies) {
+          console.log (  "E:" + scope.ability.excellencies.length );
+        }
     }
 }})
 .directive('saSpecialty', function() {
@@ -730,6 +814,33 @@ angular.module('sistemaApp')
       link: function(scope, elem, attrs, ctrl ) {
         console.log("specialty: " + scope.specialty);
       
+    }
+}})
+.directive('saExcellency', function() {
+    return {
+      restrict: 'AE',
+      scope: {
+        excellency: '='
+        },
+      template: '<a href="#" alt="{{excellency.title}}" title="{{excellency.description}}" class="excellency">&nbsp;{{excellency.abr}}&nbsp;</a> ',
+      link: function(scope, elem, attrs, ctrl ) {
+        console.log("excellency: " + scope.excellency);
+      
+    }
+}})
+.directive('saAbilityFull', function() {
+    return {
+      restrict: 'AE',
+      scope: {
+        ability: '='
+        },
+      template: '<span sa-ability ability="ability" > </span><span ng-repeat="excellency in ability.excellencies"> <sa-excellency excellency="excellency" /> </span><span ng-repeat="specialty in ability.specialties"><sa-specialty specialty="specialty" /></span> ',
+      link: function(scope, elem, attrs, ctrl ) {
+        console.log("ability: " + scope.ability.name + " " + scope.ability.value + "/" + scope.ability.max);
+
+        if (scope.ability.excellencies) {
+          console.log (  "E:" + scope.ability.excellencies.length );
+        }
     }
 }})
 .filter("unique", function () {
