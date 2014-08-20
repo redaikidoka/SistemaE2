@@ -1,4 +1,3 @@
-/*jshint quotmark: double */
 'use strict';
 
 /**
@@ -13,7 +12,7 @@ angular.module('sistemaApp')
         function($scope, $http) {
 
           $scope.character = {
-              "name": "Ash of the Phoenix",
+              name: "Ash of the Phoenix",
               "exalt_type": "Solar",
               "caste": "Night",
               "concept": "Intelligence gathering Nightbringer exalted from within the ranks of the Wyld Hunt itself",
@@ -762,7 +761,7 @@ angular.module('sistemaApp')
               ]
             }
             , "health" : { "levels": [0, 0, -1, -1, -1, -2, -4, -10], 
-            "damage": ["X", "/"]}
+            "damage": [3, 2,1]}
           }
 
           // $http.get('characters/ash.json', {cache:false}).success(function(data) {
@@ -774,6 +773,13 @@ angular.module('sistemaApp')
 
           $scope.getNumber = function(num) {
               return new Array(num);
+          }
+
+          $scope.getProgress = function(value, total) {
+            var calc = (value/total)*100;
+            console.log(calc);
+            calc = calc.toFixed(2);
+            console.log(calc);
           }
 
 
@@ -823,7 +829,7 @@ angular.module('sistemaApp')
         },
       template: '<div class="badge"><sa-motes mote-count="ability.value" mote-max="ability.max" ></div><span class="ability" ng-class="{\'favored\' : {{ability.favored}} == true }">{{ability.name}}</span> ',
       link: function(scope, elem, attrs, ctrl ) {
-        console.log("ability: " + scope.ability.name + " " + scope.ability.value + "/" + scope.ability.max);
+        //console.log("ability: " + scope.ability.name + " " + scope.ability.value + "/" + scope.ability.max);
 
         if (scope.ability.excellencies) {
           console.log (  "E:" + scope.ability.excellencies.length );
@@ -838,7 +844,7 @@ angular.module('sistemaApp')
         },
       template: '<br><span class="pull-right solar specialty" ><sa-motes mote-count="specialty.value" mote-max="specialty.value" /></span><div class="specialty" >{{specialty.name}}</div>',
       link: function(scope, elem, attrs, ctrl ) {
-        console.log("specialty: " + scope.specialty);
+        //console.log("specialty: " + scope.specialty);
       
     }
 }})
@@ -850,13 +856,13 @@ angular.module('sistemaApp')
         },
       template: '<a href="#" alt="{{excellency.title}}" title="{{excellency.description}}" class="excellency">&nbsp;{{excellency.abr}}&nbsp;</a> ',
       link: function(scope, elem, attrs, ctrl ) {
-        console.log("excellency: " + scope.excellency);
+        //console.log("excellency: " + scope.excellency);
       
     }
-}})
-.directive('saAbilityFull', function() {
+};})
+.directive("saAbilityFull", function() {
     return {
-      restrict: 'AE',
+      restrict: "AE",
       scope: {
         ability: '='
         },
@@ -865,10 +871,10 @@ angular.module('sistemaApp')
         console.log("ability: " + scope.ability.name + " " + scope.ability.value + "/" + scope.ability.max);
 
         if (scope.ability.excellencies) {
-          console.log (  "E:" + scope.ability.excellencies.length );
+          //console.log (  "E:" + scope.ability.excellencies.length );
         }
     }
-}})
+};})
 .filter("unique", function () {
     return function (data, propertyName) {
         if (angular.isArray(data) && angular.isString(propertyName)) {
@@ -885,10 +891,10 @@ angular.module('sistemaApp')
         } else {
             return data;
         }
-    }
+    };
 })
-.filter('checkmark', function() {
+.filter("checkmark", function() {
 	return function(input) {
-		return input ? '\u2713' : '\u2718';
+		return input ? "\u2713" : "\u2718";
 	};
 });

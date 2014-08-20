@@ -10,13 +10,11 @@
   <div id="abilities" class="panel-body collapse in">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" ng-repeat="casteability in character.ability | orderBy:'caste' | unique:'caste'">
+        <div class="col-lg-6 col-xs-12" >
             <ul class="list-group ">
-                <li class="list-group-item panel-heading text-capitalize text-center">
-                    <h4>{{casteability}}</h4>
-                </li>
 
-                <li class="list-group-item" ng-repeat="ability in character.ability | filter:{caste: casteability}">
+                <li class="list-group-item" ng-repeat="ability in character.ability | orderBy:'name'"
+                  ng-class="{'list-group-item-success': ability.favored}">
                     <span sa-ability-full ability="ability"></span>
                 </li>
             </ul>
