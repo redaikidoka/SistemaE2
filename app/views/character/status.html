@@ -1,0 +1,26 @@
+<article class="panel panel-default">
+	<!-- Attributes panel -->
+	<header class="panel-heading">
+		<h2 class="panel-title text-uppercase">
+			<a data-toggle="collapse"  data-target="#status" class="glyphicon glyphicon-chevron-down"></a>
+			<a name="status"></a>Status</h2>
+	</header>
+	<div id="status" class="panel-body collapse in"><!-- Attribute Panel Body -->
+    <div class="container-fluid">
+      <div class="row">
+		<div class="col-xs-4"> 
+			<ul class="list-group">
+			<li class="list-group-item panel-heading text-capitalize text-center" > <h4>Virtues</h4> </li>
+				<li class="list-group-item" ng-repeat="virtue in character.virtues.bucket " ng-class="{'list-group-item-warning': virtue.flaw}"> 
+					<span class="badge"> 
+						<sa-motes mote-count="virtue.value" mote-max="5" stat-name="virtue.name"></span>
+					</span>
+					<span class="stat">{{ virtue.name }}</span>
+				</li>
+			</ul>
+		</div> <!-- col -->
+      </div><!-- row -->
+    </div> <!-- container-fluid -->
+
+	</div><!-- Attribute Panel Body -->
+</article><!-- Attributes panel -->

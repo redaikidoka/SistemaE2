@@ -734,9 +734,35 @@ angular.module('sistemaApp')
                       "value": 0
                   }],
                   "bullshit": "insert bullshit here",
-                  "tooltip": "Knock back a bitch"
+                  "tooltip": "Remove environment penalties"
 
               }]
+            ,"virtues": {
+              "flaw": {
+                "name": "Indecisive Paralysis",
+                "trigger": "A decision the character makes goes badly",
+                "description": "The character is overwhelmed by his various commitments and responsibilities to the point where he is incapable of making any decisions. He can't even decide what to eat and will reject any attempts to decide for him, convinced that if he just takes more time he can figure it out. He may resort to games of chance to help make his decisions for him, but he will invariably keep trying regardless of the game's outcome. He can take only defensive actions in combat at a two-die penalty, and cannot defend himself in social combat.",
+                "partial_control": "The character can make decisions, but only after lengthy deliberation or games of chance. He might even willingly allow others to make all the decisions for him, even random passersby. In combat, he can attack, but only at one and a half times his normal speed as he waffles between various options. He can defend himself in social combat at a -2 die penalty."
+                , "limit": 10,
+                "current_limit": 2
+              }
+              ,"bucket":[
+                {"name": "compassion", "value": 2, "currentvalue": 2}
+                ,{"name": "Conviction", "value": 3, "currentvalue": 3, "flaw": true}
+                ,{"name": "Temperance", "value": 2, "currentvalue": 2}
+                ,{"name": "valor", "value": 2, "currentvalue": 2}
+              ]
+            }
+            , "essence": {
+              "value": 3,
+              "pools": [
+                {"name":"personal", "value": 14, "currentvalue": 0}
+                ,{"name":"peripheral", "value": 35, "currentvalue": 33}
+                
+              ]
+            }
+            , "health" : { "levels": [0, 0, -1, -1, -1, -2, -4, -10], 
+            "damage": ["X", "/"]}
           }
 
           // $http.get('characters/ash.json', {cache:false}).success(function(data) {
