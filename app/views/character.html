@@ -8,9 +8,9 @@
       <div class="row ">
         <!-- CHARACTER HEADER : Should we use a <header>? -->
         <div class="col-xs-3 col-sm-3 placeholders text-center">
-          <img src="images/caste/zenith-fancy.jpg" class="img-responsive center-block " alt="Zenith">
+          <img ng-src="{{getIcon(character.caste)}}" class="img-responsive center-block " alt="Zenith">
           <h4 class="text-uppercase text-center ">{{character.caste }}</h4>
-          <span class="text-muted text-center ">{{ character.anima }}</span>
+          <span class="text-muted text-center ">{{character.anima}}</span>
         </div>
         <div class="col-xs-6 col-sm-9 ">
           <h2>{{ character.name }}</h2>

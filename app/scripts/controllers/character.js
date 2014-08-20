@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name devApp.controller:MainCtrl
+ * @name sistemaApp.controller:CharacterCtrl
  * @description
- * # MainCtrl
- * Controller of the devApp
+ * # CharacterCtrl
+ * Basic character display
  */
 angular.module('sistemaApp')
-		.constant("dataUrl", "/app/characters/ash.json")
+		.constant("dataUrl", "characters/ash.json")
 		.controller('CharacterCtrl', ['$scope', '$http',
 			function($scope, $http) {
 
@@ -16,11 +16,12 @@ angular.module('sistemaApp')
 
 				$http.get('characters/ash.json', {cache:false})
 						.success(function (data) {
-								$scope.data.character = data;
+								//$scope.data.character = data;
 								$scope.character = data;
 						})
 						.error(function (error) {
 								$scope.data.error = error;
+								console.log(error);
 						});         
 
 					 // $http.get('characters/ash.json', {cache:false}).success(function(data) {
@@ -39,6 +40,15 @@ angular.module('sistemaApp')
 						console.log(calc);
 						calc = calc.toFixed(2);
 						console.log(calc);
+					}
+
+					$scope.getIcon = function(caste) {
+						if (!angular.isString(caste)) {
+							return "images/caste/void.jpg";
+						}
+
+						return "images/caste/" + angular.lowercase(caste) + "-fancy.jpg";
+
 					}
 
 
