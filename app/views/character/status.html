@@ -8,7 +8,7 @@
 	<div id="status" class="panel-body collapse in"><!-- Attribute Panel Body -->
     <div class="container-fluid">
       <div class="row">
-		<div class="col-xs-4"> 
+		<div class="col-sm-4 col-xs-12"> 
 			<ul class="list-group">
 			<li class="list-group-item panel-heading text-capitalize text-center" > <h4>Virtues</h4> </li>
 				<li class="list-group-item" ng-repeat="virtue in character.virtues.bucket" ng-class="{'list-group-item-warning': virtue.flaw}"> 
@@ -20,14 +20,14 @@
 			</ul>
 		</div> <!-- col -->
 
-		<div class="col-xs-4"> 
+		<div class="col-sm-4 col-xs-12"> 
 			<ul class="list-group">
 				<li class="list-group-item panel-heading text-capitalize text-center" > <h4>Essence <span class="label label-warning" sa-motes mote-count="character.essence.value" mote-max="character.essence.value" /> </h4></li>
 				<li class="list-group-item" ng-repeat="pool in character.essence.pools" > 
 					<span class="badge"> 
 						{{pool.currentvalue}} / {{pool.value}}
 					</span>
-					<span class="stat">{{ pool.name }}</span>
+					<span class="stat">{{ pool.name }} Pool</span>
 					<div class="progress">
 					  <div class="progress-bar" role="progressbar" aria-valuenow="pool.currentvalue" aria-valuemin="0" aria-valuemax="pool.value" style="width:60%;" ng-style="{width : ( getProgress(pool.currentvalue, pool.value) + '%' ) }" >
 					    {{pool.currentvalue}}
@@ -37,7 +37,44 @@
 			</ul>
 		</div> <!-- col -->
 
-      </div><!-- row -->
+ 		<div class="col-sm-4 col-xs-12"> 
+			<ul class="list-group">
+				<li class="list-group-item panel-heading text-capitalize text-center" > <h4>Health <span class="label label-danger">{{ character.health.levels[character.health.damage.length] }}</span></h4></li>
+				<li class="list-group-item" > 
+					<span class="badge"> 
+						{{character.health.levels.length - character.health.damage.length}} / {{character.health.levels.length}}
+					</span>
+					<span class="stat">Current: {{ character.health.levels[character.health.damage.length] }} </span>
+					<div class="progress">
+					  <div class="progress-bar " style="width: 13%; background-color: black">
+					    <a href="#" title="0">A</a>
+					  </div>
+					  <div class="progress-bar progress-bar-danger progress-bar-striped" style="width: 13%">
+					    <a href="#" title="0">L</a> 
+					  </div>
+					  <div class="progress-bar progress-bar-warning" style="width: 13%">
+					    <a href="#" title="-1">B</a>
+					  </div>
+					</div>
+					<div class="progress" style="background-color:green;">
+					  <div class="progress-bar " style="width: 13%; background-color: black">
+					    A 0
+					  </div>
+					  <div class="progress-bar progress-bar-danger progress-bar-striped" style="width: 13%">
+					    L 0
+					  </div>
+					  <div class="progress-bar progress-bar-warning" style="width: 13%">
+					    B -1
+					  </div>
+					  <div class="progress-bar progress-bar-success" style="width: 61%">
+					  	-1 -2 -2 -4 &nbsp;I
+					  </div>
+					</div>
+				</li>
+			</ul>
+		</div> <!-- col -->
+
+     </div><!-- row -->
     </div> <!-- container-fluid -->
 
 	</div><!-- Attribute Panel Body -->

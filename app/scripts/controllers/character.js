@@ -37,9 +37,9 @@ angular.module('sistemaApp')
 
 					$scope.getProgress = function(value, total) {
 						var calc = (value/total)*100;
-						console.log(calc);
+						console.log("value: " + value + " total: " + total + "calc: " + calc);
 						calc = calc.toFixed(2);
-						console.log(calc);
+						console.log("FIXED: value: " + value + " total: " + total + " calc: " + calc);
 					}
 
 					$scope.getIcon = function(caste) {

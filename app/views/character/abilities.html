@@ -17,7 +17,7 @@
                 </li>
 
                 <li class="list-group-item" ng-repeat="ability in character.ability | filter:{caste: casteability}"
-                  ng-class="{'list-group-item-success': ability.favored}">
+                  ng-class="{'list-group-item-warning': ability.favored}">
                     <span sa-ability-full ability="ability"></span>
                 </li>
             </ul>

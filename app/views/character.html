@@ -8,8 +8,8 @@
       <div class="row ">
         <!-- CHARACTER HEADER : Should we use a <header>? -->
         <div class="col-xs-3 col-sm-3 placeholders text-center">
-          <img ng-src="{{getIcon(character.caste)}}" class="img-responsive center-block " alt="Zenith">
-          <h4 class="text-uppercase text-center ">{{character.caste }}</h4>
+          <img ng-src="{{getIcon(character.caste)}}" class="img-responsive center-block " alt="{{character.caste}}" title="{{character.caste}}">
+          <h4 class="text-uppercase text-center " style="margin-top: -22px; color: #333; text-shadow: 1px 1px 3px white;">{{character.caste }}</h4>
           <span class="text-muted text-center ">{{character.anima}}</span>
         </div>
         <div class="col-xs-6 col-sm-9 ">
