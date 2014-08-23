@@ -1,21 +1,28 @@
 'use strict';
 
-describe('Controller: MainCtrl', function () {
+describe('Controller: CharacterCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('sistemaE2App'));
+  beforeEach(module('sistemaApp'));
 
-  var MainCtrl,
+  var CharacterCtrl,
     scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    MainCtrl = $controller('CharacterCtrl', {
+    CharacterCtrl = $controller('CharacterCtrl', {
       $scope: scope
     });
   }));
 
+  it('should have character data'), function() {
+    expect(scope.character).not.toBe(null);
+  }
+
+  it('should have 9 attributres'), function() {
+    expect(scope.character.attribute.length).toBe(9);
+  }
   // it('should attach a list of awesomeThings to the scope', function () {
   //   expect(scope.awesomeThings.length).toBe(3);
   // });

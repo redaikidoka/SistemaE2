@@ -749,7 +749,7 @@
   }
   , "health" : { 
     "levels": [0, 0, -1, -1, -1, -2, -4, -10], 
-    "damage": [3, 2,1]
+    "damage": [3, 2,  2,  2,  1,  1]
   }
   , "experience" : { "value": 16, "currentvalue": 8}
 }

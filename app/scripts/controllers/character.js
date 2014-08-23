@@ -12,12 +12,21 @@ angular.module('sistemaApp')
 		.controller('CharacterCtrl', ['$scope', '$http',
 			function($scope, $http) {
 
+
+				$scope.getCurrentHealth = function(health, damage) {
+
+					if (!health || !damage) { return 0;}
+
+					return health[damage.length];
+				}
+
  				$scope.data = {};
 
 				$http.get('characters/ash.json', {cache:false})
 						.success(function (data) {
 								//$scope.data.character = data;
 								$scope.character = data;
+								$scope.character.health.currentHealth = $scope.getCurrentHealth($scope.character.health.levels, $scope.character.health.damage);
 						})
 						.error(function (error) {
 								$scope.data.error = error;
@@ -36,10 +45,10 @@ angular.module('sistemaApp')
 					}
 
 					$scope.getProgress = function(value, total) {
-						var calc = (value/total)*100;
-						console.log("value: " + value + " total: " + total + "calc: " + calc);
-						calc = calc.toFixed(2);
-						console.log("FIXED: value: " + value + " total: " + total + " calc: " + calc);
+						var calc = (value*100/total).toFixed(0);
+						calc = calc + '%';
+
+						return calc ;
 					}
 
 					$scope.getIcon = function(caste) {
@@ -48,9 +57,7 @@ angular.module('sistemaApp')
 						}
 
 						return "images/caste/" + angular.lowercase(caste) + "-fancy.jpg";
-
 					}
-
 
 				}
 		])
@@ -72,21 +79,8 @@ angular.module('sistemaApp')
 					scope.motes.push( i );
 				}
 
-				//console.log(scope.motes);
 			}
 
-			// scope.$watch('moteCount',function(newValue, oldValue){
-			//     if(newValue !== oldValue){
-			//       console.log({label:'watch', value: scope.mouteCount});
-			//     }
-
-			// 	if (angular.isObject(scope.moteMax)) {
-			// 		for (var i = 0; i< scope.moteMax; i++) {
-			// 			scope.motes.push( i );
-			// 		}
-			// 	}
-
-			//   });
 			
 		}
 }})
@@ -101,7 +95,7 @@ angular.module('sistemaApp')
 				//console.log("ability: " + scope.ability.name + " " + scope.ability.value + "/" + scope.ability.max);
 
 				if (scope.ability.excellencies) {
-					console.log (  "E:" + scope.ability.excellencies.length );
+					//console.log (  "E:" + scope.ability.excellencies.length );
 				}
 		}
 }})
@@ -137,7 +131,7 @@ angular.module('sistemaApp')
 				},
 			template: '<span sa-ability ability="ability" > </span><span ng-repeat="excellency in ability.excellencies"> <sa-excellency excellency="excellency" /> </span><span ng-repeat="specialty in ability.specialties"><sa-specialty specialty="specialty" /></span> ',
 			link: function(scope, elem, attrs, ctrl ) {
-				console.log("ability: " + scope.ability.name + " " + scope.ability.value + "/" + scope.ability.max);
+				//console.log("ability: " + scope.ability.name + " " + scope.ability.value + "/" + scope.ability.max);
 
 				if (scope.ability.excellencies) {
 					//console.log (  "E:" + scope.ability.excellencies.length );

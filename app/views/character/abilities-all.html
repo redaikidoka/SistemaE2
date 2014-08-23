@@ -13,7 +13,7 @@
         <div class="col-lg-6 col-xs-12" >
             <ul class="list-group ">
 
-                <li class="list-group-item" ng-repeat="ability in character.ability | orderBy:'name'"
+                <li class="list-group-item" ng-repeat="ability in character.abilities | orderBy:'name'"
                   ng-class="{'list-group-item-warning': ability.favored}">
                     <span sa-ability-full ability="ability"></span>
                 </li>

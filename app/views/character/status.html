@@ -22,15 +22,16 @@
 
 		<div class="col-sm-4 col-xs-12"> 
 			<ul class="list-group">
-				<li class="list-group-item panel-heading text-capitalize text-center" > <h4>Essence <span class="label label-warning" sa-motes mote-count="character.essence.value" mote-max="character.essence.value" /> </h4></li>
+				<li class="list-group-item panel-heading text-capitalize text-center" > <h4>Essence <span class="small darkblackshadow" style="color: white;" sa-motes mote-count="character.essence.value" mote-max="character.essence.value" /> </h4></li>
 				<li class="list-group-item" ng-repeat="pool in character.essence.pools" > 
 					<span class="badge"> 
 						{{pool.currentvalue}} / {{pool.value}}
 					</span>
 					<span class="stat">{{ pool.name }} Pool</span>
 					<div class="progress">
-					  <div class="progress-bar" role="progressbar" aria-valuenow="pool.currentvalue" aria-valuemin="0" aria-valuemax="pool.value" style="width:60%;" ng-style="{width : ( getProgress(pool.currentvalue, pool.value) + '%' ) }" >
-					    {{pool.currentvalue}}
+					  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="pool.currentvalue" aria-valuemin="0" aria-valuemax="pool.value"  ng-style="{'width' : getProgress(pool.currentvalue, pool.value)  }" >
+					  	<span ng-show="pool.currentvalue > 0"> {{ pool.currentvalue }} </span>
+					  	<span ng-show="pool.currentvalue == 0" class="small"> None </span>
 					  </div>
 					</div>
 				</li>
@@ -39,25 +40,15 @@
 
  		<div class="col-sm-4 col-xs-12"> 
 			<ul class="list-group">
-				<li class="list-group-item panel-heading text-capitalize text-center" > <h4>Health <span class="label label-danger">{{ character.health.levels[character.health.damage.length] }}</span></h4></li>
+				<li class="list-group-item panel-heading text-capitalize text-center" > <h4>Health <span class="label" ng-class="{ 'label-primary':character.health.currentHealth == 0, 'label-success': character.health.currentHealth == -1 , 'label-warning': character.health.currentHealth == -2, 'label-danger': character.health.currentHealth == -4, 'label-default': character.health.currentHealth == -10 }">{{ character.health.currentHealth }}</span></h4></li>
 				<li class="list-group-item" > 
 					<span class="badge"> 
 						{{character.health.levels.length - character.health.damage.length}} / {{character.health.levels.length}}
 					</span>
-					<span class="stat">Current: {{ character.health.levels[character.health.damage.length] }} </span>
-					<div class="progress">
-					  <div class="progress-bar " style="width: 13%; background-color: black">
-					    <a href="#" title="0">A</a>
-					  </div>
-					  <div class="progress-bar progress-bar-danger progress-bar-striped" style="width: 13%">
-					    <a href="#" title="0">L</a> 
-					  </div>
-					  <div class="progress-bar progress-bar-warning" style="width: 13%">
-					    <a href="#" title="-1">B</a>
-					  </div>
-					</div>
+					<span class="stat">Current: {{ character.health.currentHealth }} </span>
+					
 					<div class="progress" style="background-color:green;">
-					  <div class="progress-bar " style="width: 13%; background-color: black">
+					  <div class="progress-bar progress-bar-danger" style="width: 13%; background-color: black">
 					    A 0
 					  </div>
 					  <div class="progress-bar progress-bar-danger progress-bar-striped" style="width: 13%">
@@ -70,6 +61,22 @@
 					  	-1 -2 -2 -4 &nbsp;I
 					  </div>
 					</div>
+
+					<div class="progress" style="background-color: green;">
+					  <div class="progress-bar progress-bar-warning" ng-style="{'width' : (100/8)+'%' }">
+					    A {{character.health.levels[0]}}
+					  </div>
+					  <div class="progress-bar progress-bar-warning progress-bar-striped" ng-style="{'width' : (300/8)+'%' }">
+					    L 
+					  </div>
+					  <div class="progress-bar progress-bar-warning" ng-style="{'width' : (200/8)+'%' }">
+					    B -1
+					  </div>
+					  <div class="progress-bar progress-bar-success" style="width: (200/8)+ '%'">
+					  	-1 -2 -2 -4 &nbsp;I
+					  </div>
+					</div>
+
 				</li>
 			</ul>
 		</div> <!-- col -->
