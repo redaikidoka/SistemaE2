@@ -8,7 +8,7 @@
 	<div id="status" class="panel-body collapse in"><!-- Attribute Panel Body -->
     <div class="container-fluid">
       <div class="row">
-		<div class="col-sm-4 col-xs-12"> 
+		<div class="col-sm-3 col-xs-12"> 
 			<ul class="list-group">
 			<li class="list-group-item panel-heading text-capitalize text-center" > <h4>Virtues</h4> </li>
 				<li class="list-group-item" ng-repeat="virtue in character.virtues.bucket" ng-class="{'list-group-item-warning': virtue.flaw}"> 
@@ -18,7 +18,7 @@
 			</ul>
 		</div> <!-- col -->
 
-		<div class="col-sm-4 col-xs-12"> 
+		<div class="col-sm-2 col-xs-12"> 
 			<ul class="list-group">
 				<li class="list-group-item panel-heading text-capitalize text-center" > <h4>Essence <span class="small darkblackshadow" style="color: white;" sa-motes mote-count="character.essence.value" mote-max="character.essence.value" /> </h4></li>
 				<li class="list-group-item" ng-repeat="pool in character.essence.pools" > 
@@ -36,7 +36,14 @@
 			</ul>
 		</div> <!-- col -->
 
- 		<div class="col-sm-4 col-xs-12"> 
+		<div class="col-sm-2 col-xs-12"> 
+			<ul class="list-group">
+				<li class="list-group-item panel-heading text-capitalize text-center" > <h4>Willpower <span class="small darkblackshadow" style="color: white;" sa-motes mote-count="character.willpower.currentvalue" mote-max="character.willpower.value" /> </h4></li>
+			</ul>
+		</div> <!-- col -->
+
+	
+ 		<div class="col-sm-3 col-xs-12"> 
 			<ul class="list-group">
 				<li class="list-group-item panel-heading text-capitalize text-center" > <h4>Health <span class="label" ng-class="{ 'label-primary':character.health.currentHealth == 0, 'label-success': character.health.currentHealth == -1 , 'label-warning': character.health.currentHealth == -2, 'label-danger': character.health.currentHealth == -4, 'label-default': character.health.currentHealth == -10 }">{{ character.health.currentHealth }}</span></h4></li>
 				<li class="list-group-item" > 
@@ -45,39 +52,55 @@
 					</span>
 					<span class="stat">Current: {{ character.health.currentHealth }} </span>
 					
+					Shows Damage Type as Colors
 					<div class="progress" style="background-color:green;">
 					  <div class="progress-bar progress-bar-danger" style="width: 13%; background-color: black">
 					    A 0
 					  </div>
-					  <div class="progress-bar progress-bar-danger progress-bar-striped" style="width: 13%">
-					    L 0
+					  <div class="progress-bar progress-bar-danger progress-bar-striped" style="width: 39%">
+					    L 0 -1 -1
 					  </div>
-					  <div class="progress-bar progress-bar-warning" style="width: 13%">
-					    B -1
+					  <div class="progress-bar progress-bar-warning" style="width: 26%">
+					    B -1 -2
 					  </div>
-					  <div class="progress-bar progress-bar-success" style="width: 61%">
-					  	-1 -2 -2 -4 &nbsp;I
+					  <div class="progress-bar progress-bar-success" style="width: 22%">
+					  	-4 &nbsp;I
+					  </div>
+					</div>
+					
+					Shows wound progress as colors
+					<div class="progress" style="background-color: green;">
+					  <div class="progress-bar progress-bar-danger" ng-style="{'width' : (100/8)+'%' }">
+					    <i>A</i> {{character.health.levels[0]}}
+					  </div>
+					  <div class="progress-bar progress-bar-danger progress-bar-striped" ng-style="{'width' : (300/8)+'%' }">
+					    <i>L</i> {{character.health.levels[1]}}  {{character.health.levels[2]}}  {{character.health.levels[3]}}
+					  </div>
+					  <div class="progress-bar progress-bar-danger" ng-style="{'width' : (200/8)+'%' }">
+					    <i>B</i> -1 -2
+					  </div>
+					  <div class="progress-bar progress-bar-success" style="{width: (200/8)+ '%'' }'">
+					  	&nbsp; -4 &nbsp;I&nbsp;
 					  </div>
 					</div>
 
-					<div class="progress" style="background-color: green;">
-					  <div class="progress-bar progress-bar-warning" ng-style="{'width' : (100/8)+'%' }">
-					    A {{character.health.levels[0]}}
-					  </div>
-					  <div class="progress-bar progress-bar-warning progress-bar-striped" ng-style="{'width' : (300/8)+'%' }">
-					    L 
-					  </div>
-					  <div class="progress-bar progress-bar-warning" ng-style="{'width' : (200/8)+'%' }">
-					    B -1
-					  </div>
-					  <div class="progress-bar progress-bar-success" style="width: (200/8)+ '%'">
-					  	-1 -2 -2 -4 &nbsp;I
-					  </div>
+					Show wounds as pills
+					<div><span class="label label-default">0</span> <span class="label label-danger">0</span> <span class="label label-danger">-1</span> <span class="label label-danger">-1</span> <span class="label label-warning">-1</span> <span class="label label-warning">-2</span> <span class="label label-success">-4</span> <span class="label label-success">I</span>
 					</div>
 
 				</li>
 			</ul>
 		</div> <!-- col -->
+
+		<div class="col-sm-4 col-xs-12"> 
+			<ul class="list-group">
+				<li class="list-group-item panel-heading text-capitalize text-center" > <h4>Limit Break <span class="small darkblackshadow" style="color: white;" sa-motes mote-count="character.virtues.flaw.currentvalue" mote-max="character.virtues.flaw.value" /> </h4></li>
+				<li class="list-group-item"> <b>{{character.virtues.flaw.name}}</b> : {{character.virtues.flaw.trigger}} </li>
+				<li class="list-group-item"> <i>{{character.virtues.flaw.description}} </i> </li>
+
+			</ul>
+		</div> <!-- col -->
+
 
      </div><!-- row -->
     </div> <!-- container-fluid -->

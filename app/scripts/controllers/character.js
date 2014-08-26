@@ -8,7 +8,6 @@
  * Basic character display
  */
 angular.module('sistemaApp')
-		.constant("dataUrl", "characters/ash.json")
 		.controller('CharacterCtrl', ['$scope', '$http',
 			function($scope, $http) {
 
@@ -22,7 +21,7 @@ angular.module('sistemaApp')
 
  				$scope.data = {};
 
-				$http.get('characters/ash.json', {cache:false})
+				$http.get('characters/ash.json')
 						.success(function (data) {
 								//$scope.data.character = data;
 								$scope.character = data;
@@ -55,10 +54,8 @@ angular.module('sistemaApp')
 						if (!angular.isString(caste)) {
 							return "images/caste/void.jpg";
 						}
-
 						return "images/caste/" + angular.lowercase(caste) + "-fancy.jpg";
 					}
-
 				}
 		])
 .directive('saMotes', function() {
@@ -110,17 +107,17 @@ angular.module('sistemaApp')
 		scope: {
 			attribute: '='
 		},
-		template: '<div class="badge"><span ng-repeat="mote in attribute.max" class="glyphicon glyphicon-certificate" ng-class="{\'mote-empty\':$index>moteCount-1}"> </span></div><span class="stat">{{ attribute.name }}</span>',
+		template: '<sa-motes-badge mote-count="attribute.value" mote-max="attribute.max"></sa-motes-badge> <span class="stat">{{ attribute.name }}</span>',
 		link: function(scope, elem, attrs, ctrl ) {
 			scope.motes = []; 
 			// console.log(scope.statName + ": " + scope.moteCount + " / " + scope.moteMax);
 
-			if ( angular.isNumber(scope.moteMax) ) {
-				for (var i = 0; i< scope.moteMax; i++) {
-					scope.motes.push( i );
-				}
+			// if ( angular.isNumber(scope.attribute.max) ) {
+			// 	for (var i = 0; i< scope.attribute.max; i++) {
+			// 		scope.motes.push( i );
+			// 	}
 
-			}
+			// }
 
 			
 		}
