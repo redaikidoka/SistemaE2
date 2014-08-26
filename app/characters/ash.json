@@ -735,7 +735,7 @@
       {"name": "compassion", "value": 2, "currentvalue": 2}
       ,{"name": "Conviction", "value": 3, "currentvalue": 3, "flaw": true}
       ,{"name": "Temperance", "value": 2, "currentvalue": 2}
-      ,{"name": "valor", "value": 2, "currentvalue": 2}
+      ,{"name": "valor", "value": 2, "currentvalue": 1}
     ]
   }
   , "essence": {

@@ -20,6 +20,12 @@
 
 		<div class="col-sm-2 col-xs-12"> 
 			<ul class="list-group">
+				<li class="list-group-item panel-heading text-capitalize text-center" > <h4>Willpower <span class="small darkblackshadow" style="color: white;" sa-motes mote-count="character.willpower.currentvalue" mote-max="character.willpower.value" /> </h4></li>
+			</ul>
+		</div> <!-- col -->
+
+		<div class="col-sm-2 col-xs-12"> 
+			<ul class="list-group">
 				<li class="list-group-item panel-heading text-capitalize text-center" > <h4>Essence <span class="small darkblackshadow" style="color: white;" sa-motes mote-count="character.essence.value" mote-max="character.essence.value" /> </h4></li>
 				<li class="list-group-item" ng-repeat="pool in character.essence.pools" > 
 					<span class="badge"> 
@@ -36,9 +42,13 @@
 			</ul>
 		</div> <!-- col -->
 
-		<div class="col-sm-2 col-xs-12"> 
+
+		<div class="col-sm-4 col-xs-12"> 
 			<ul class="list-group">
-				<li class="list-group-item panel-heading text-capitalize text-center" > <h4>Willpower <span class="small darkblackshadow" style="color: white;" sa-motes mote-count="character.willpower.currentvalue" mote-max="character.willpower.value" /> </h4></li>
+				<li class="list-group-item panel-heading text-capitalize text-center" > <h4>Limit Break <span class="small darkblackshadow" style="color: white;" sa-motes mote-count="character.virtues.flaw.currentvalue" mote-max="character.virtues.flaw.value" /> </h4></li>
+				<li class="list-group-item"> <b>{{character.virtues.flaw.name}}</b> : {{character.virtues.flaw.trigger}} </li>
+				<li class="list-group-item"> <i>{{character.virtues.flaw.description}} </i> </li>
+
 			</ul>
 		</div> <!-- col -->
 
@@ -105,5 +115,5 @@
      </div><!-- row -->
     </div> <!-- container-fluid -->
 
-	</div><!-- Attribute Panel Body -->
-</article><!-- Attributes panel -->
+	</div><!--  Panel Body -->
+</article><!--  panel -->
