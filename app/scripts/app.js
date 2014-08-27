@@ -31,6 +31,10 @@ angular
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
       })
+      .when('/quickview', {
+        templateUrl: 'views/quickview.html',
+        controller: 'QuickviewCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
