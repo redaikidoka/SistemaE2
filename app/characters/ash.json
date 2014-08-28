@@ -563,7 +563,8 @@
           "max": 5,
           "value": 1,
           "caste": "eclipse",
-          "favored": false
+          "favored": false,
+          "languages": ["Low Realm"]
       },
       {
           "name": "ride",
@@ -693,7 +694,7 @@
             "name": "willpower",
             "value": 0
         }],
-        "bullshit": "insert bullshit here",
+        "description": "insert bullshit here",
         "tooltip": "Knock back a bitch"
     }, {
         "domain": "Solar",
@@ -718,7 +719,7 @@
             "name": "willpower",
             "value": 0
         }],
-        "bullshit": "insert bullshit here",
+        "description": "insert bullshit here",
         "tooltip": "Remove environment penalties"
 
     }]
