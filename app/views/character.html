@@ -1,77 +1,20 @@
 
-    <div class="container">
-
-      <div class="row row-offcanvas row-offcanvas-right">
-
-        <div class="col-xs-12 col-sm-9">
-          <p class="pull-right visible-xs">
-            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
-          </p>
-          <div class="jumbotron">
-            <h1>Hello, world!</h1>
-            <p>This is an example to show the potential of an offcanvas layout pattern in Bootstrap. Try some responsive-range viewport sizes to see it in action.</p>
-          </div>
-          <div class="row">
-            <div class="col-6 col-sm-6 col-lg-4">
-              <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-            </div><!--/span-->
-            <div class="col-6 col-sm-6 col-lg-4">
-              <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-            </div><!--/span-->
-            <div class="col-6 col-sm-6 col-lg-4">
-              <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-            </div><!--/span-->
-            <div class="col-6 col-sm-6 col-lg-4">
-              <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-            </div><!--/span-->
-            <div class="col-6 col-sm-6 col-lg-4">
-              <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-            </div><!--/span-->
-            <div class="col-6 col-sm-6 col-lg-4">
-              <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-            </div><!--/span-->
-          </div><!--/row-->
-        </div><!--/span-->
-
-        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar"  >
-          <div class="list-group">
-            <a href="#" class="list-group-item active">Link</a>
-            <a href="#" class="list-group-item">Link</a>
-            <a href="#" class="list-group-item">Link</a>
-            <a href="#" class="list-group-item">Link</a>
-            <a href="#" class="list-group-item">Link</a>
-            <a href="#" class="list-group-item">Link</a>
-            <a href="#" class="list-group-item">Link</a>
-            <a href="#" class="list-group-item">Link</a>
-            <a href="#" class="list-group-item">Link</a>
-            <a href="#" class="list-group-item">Link</a>
-          </div>
-        </div><!--/span-->
-      </div><!--/row-->
-</div> <!-- container -->
-
-    <section id="character" class="container-fluid">
+   <section id="character" class="container-fluid">
       <div class="main"> <!-- CHARACTER SHEET AREA -->
-        <div class="row ">  
-          <div class="col-xs-3 col-sm-3 placeholders text-center"> <!-- CHARACTER HEADER : Should we use a <header>? -->
+        <div class="row row-offcanvas row-offcanvas-right">  
+         <div class="col-xs-12 col-sm-9">
+         <div class="row">
+           <p class="pull-right visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas" sa-toggle-tracker>Tracker</button>
+          </p>
+         <div class="col-xs-3 col-sm-3 placeholders text-center"> <!-- caste block -->
             <img ng-src="{{getIcon(character.caste)}}" class="img-responsive center-block " alt="{{character.caste}}" title="{{character.caste}}">
             <h4 class="text-uppercase text-center " style="margin-top: -22px; color: #333; text-shadow: 1px 1px 3px white;">{{character.caste }}</h4>
             <span class="text-muted text-center ">{{character.anima}}</span>
-          </div>
-          <div class="col-xs-6 col-sm-9 ">
-            <h2>{{ character.name }}</h2>
+          </div> <!-- caste block -->
+
+          <div class="col-xs-6 col-sm-9 "> <!-- character info -->
+           <h2>{{ character.name }}</h2>
             <dl class="dl-horizontal">
               <dt>Concept</dt>
               <dd>{{ character.concept }}</dd>
@@ -80,20 +23,25 @@
               <dt>Anima Banner</dt>
               <dd>{{ character.anima_banner}}</dd>
             </dl>
-          </div>
-        </div>
+          </div> <!-- character info -->
+        </div> <!--  class="row" -->
 
-        <div class="row" ng-include="'views/character/attributes.html'" ><!-- Display row -->
-        </div><!-- Display row -->
+        <div class="row" ng-include="'views/character/attributes.html'" > </div>
 
-        <div class="row " ng-include="'views/character/abilities.html'" ><!-- Display row -->      
-       </div><!-- Display row -->
+        <div class="row " ng-include="'views/character/abilities.html'" ></div>
 
-        <div class="row" ng-include="'views/character/advantages.html'" ><!--  ng-include="'partials/character/advantages.html'"  Display row --> 
-        </div><!-- Display row -->
+        <div class="row" ng-include="'views/character/advantages.html'" ></div>
 
-        <div class="row " ng-include="'views/character/status.html'" >     
-       </div><!-- Display row -->
+        <div class="row " ng-include="'views/character/status.html'" > </div>
+        
+        </div> <!-- offcanvas main character area -->
 
+        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="tracker" role="navigation" > <!-- tracker -->
+          <div ng-include="'views/character/tracker.html'" ></div>
+        </div> <!-- tracker -->
+
+      </div> <!-- offcanvas ROW -->
       </div><!-- main -->
     </section>
+
+

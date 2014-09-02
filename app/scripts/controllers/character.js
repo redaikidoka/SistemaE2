@@ -176,6 +176,16 @@ angular.module('sistemaApp')
 				}
 		}
 };})
+.directive("saToggleTracker", function() {
+		return {
+			restrict: "AE",
+			link: function(scope, elem, attrs ) {
+				// on click
+				$(elem).click(function() {
+					$('.row-offcanvas').toggleClass('active');
+				});
+		}
+};})
 .filter("unique", function () {
 		return function (data, propertyName) {
 				if (angular.isArray(data) && angular.isString(propertyName)) {

@@ -37,6 +37,26 @@
           </ul>
 
         </div>
+
+        <div class="col-md-3">
+          <h3>Languages</h3>
+          <ul class="list-group">
+            <li class="list-group-item" ng-repeat="bg in character.backgrounds.bucket">
+              <span class="badge">
+                <sa-motes mote-count="bg.value" mote-max="bg.value" stat-name="bg.name">
+              </span>
+              <span class="ability">{{bg.name}}</span>
+              <span ng-repeat="detail in bg.details">
+                <br>
+                <span class="pull-right solar specialty" >
+                  <sa-motes mote-count="detail.value" mote-max="detail.value" />
+                </span>
+                <div class="specialty" >{{detail.name}}</div>
+              </span>
+            </li>
+          </ul>
+        </div>
+
       </div>
       <!-- row -->
     </div>
