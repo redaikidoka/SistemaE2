@@ -10,21 +10,29 @@
       <div class="row">
 		<div class="col-sm-3 col-xs-12"> 
 			<ul class="list-group">
-			<li class="list-group-item panel-heading text-capitalize text-center" > <h4>Virtues</h4> </li>
+				<li class="list-group-item panel-heading text-capitalize text-center" > <h4>Virtues</h4> </li>
 				<li class="list-group-item" ng-repeat="virtue in character.virtues.bucket" ng-class="{'list-group-item-warning': virtue.flaw}"> 
 					<sa-motes-badge mote-count="virtue.value" mote-max="5" stat-name="virtue.name"></sa-motes-badge>
 					<span class="stat">{{ virtue.name }}</span>
 				</li>
+
+				<li class="list-group-item panel-heading text-capitalize text-center" >  
+					<h4> <a data-toggle="collapse"  data-target="#limitnonsense" class="glyphicon glyphicon-chevron-down pull-left darkblackshadow widget" ></a>Limit Break <br><span class="small darkblackshadow" style="color: white;" sa-motes mote-count="character.virtues.flaw.currentvalue" mote-max="character.virtues.flaw.value" /> </h4>
+				</li>
+				<div id="limitnonsense" class="collapse out">
+				<li class="list-group-item"> <b>{{character.virtues.flaw.name}}</b> : {{character.virtues.flaw.trigger}} </li>
+				<li class="list-group-item"> <i>{{character.virtues.flaw.description}} </i> </li>
+				</div>
 			</ul>
 		</div> <!-- col -->
 
-		<div class="col-sm-2 col-xs-12"> 
+		<div class="col-sm-3 col-xs-12"> 
 			<ul class="list-group">
-				<li class="list-group-item panel-heading text-capitalize text-center" > <h4>Willpower <span class="small darkblackshadow" style="color: white;" sa-motes mote-count="character.willpower.currentvalue" mote-max="character.willpower.value" /> </h4></li>
+				<li class="list-group-item panel-heading text-capitalize text-center" > <h4>Willpower <br><span class="small darkblackshadow" style="color: white;" sa-motes mote-count="character.willpower.currentvalue" mote-max="character.willpower.value" /> </h4></li>
 			</ul>
 		</div> <!-- col -->
 
-		<div class="col-sm-2 col-xs-12"> 
+		<div class="col-sm-3 col-xs-12"> 
 			<ul class="list-group">
 				<li class="list-group-item panel-heading text-capitalize text-center" > <h4>Essence <span class="small darkblackshadow" style="color: white;" sa-motes mote-count="character.essence.value" mote-max="character.essence.value" /> </h4></li>
 				<li class="list-group-item" ng-repeat="pool in character.essence.pools" > 
@@ -43,16 +51,6 @@
 		</div> <!-- col -->
 
 
-		<div class="col-sm-4 col-xs-12"> 
-			<ul class="list-group">
-				<li class="list-group-item panel-heading text-capitalize text-center" > <h4>Limit Break <span class="small darkblackshadow" style="color: white;" sa-motes mote-count="character.virtues.flaw.currentvalue" mote-max="character.virtues.flaw.value" /> </h4></li>
-				<li class="list-group-item"> <b>{{character.virtues.flaw.name}}</b> : {{character.virtues.flaw.trigger}} </li>
-				<li class="list-group-item"> <i>{{character.virtues.flaw.description}} </i> </li>
-
-			</ul>
-		</div> <!-- col -->
-
-	
  		<div class="col-sm-3 col-xs-12"> 
 			<ul class="list-group">
 				<li class="list-group-item panel-heading text-capitalize text-center" > <h4>Health <span class="label" ng-class="{ 'label-primary':character.health.currentHealth == 0, 'label-success': character.health.currentHealth == -1 , 'label-warning': character.health.currentHealth == -2, 'label-danger': character.health.currentHealth == -4, 'label-default': character.health.currentHealth == -10 }">{{ character.health.currentHealth }}</span></h4></li>

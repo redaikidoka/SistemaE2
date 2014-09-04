@@ -1,14 +1,14 @@
 <article class="panel panel-default">
   <header class="panel-heading">
     <h2 class="panel-title text-uppercase">
-      <a data-toggle="collapse" data-target="#advantages" class="glyphicon glyphicon-chevron-down"></a>Advantages</h2>
+      <a data-toggle="collapse" data-target="#advantages" class="glyphicon glyphicon-chevron-down pull-left"></a> Advantages</h2>
   </header>
   <div id="advantages" class="panel-body collapse in">
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-3">
-          <h3>Backgrounds</h3>
           <ul class="list-group">
+            <li class="list-group-item panel-heading text-capitalize text-center" > <h4>Backgrounds</h4> </li>
             <li class="list-group-item" ng-repeat="bg in character.backgrounds.bucket">
               <span class="badge">
                 <sa-motes mote-count="bg.value" mote-max="bg.value" stat-name="bg.name">
@@ -26,12 +26,10 @@
         </div>
 
         <div class="col-md-5">
-          <h3>{{character.charms.length}} Charms</h3>
           <ul class="list-group">
+            <li class="list-group-item panel-heading text-capitalize text-center" > <h4><span class="label label-default">{{character.charms.length}}</span> Charms</h4> </li>
             <li class="list-group-item" ng-repeat="charm in character.charms">
-              <span class="badge">{{charm.cost}}</span>
-              </span>
-              <b> <a href="#" title="{{charm.tooltip}}">{{charm.name}}</a></b>
+              <sa-charm charm="charm" ></sa-charm>
             </li>
 
           </ul>
@@ -39,20 +37,10 @@
         </div>
 
         <div class="col-md-3">
-          <h3>Languages</h3>
           <ul class="list-group">
-            <li class="list-group-item" ng-repeat="bg in character.backgrounds.bucket">
-              <span class="badge">
-                <sa-motes mote-count="bg.value" mote-max="bg.value" stat-name="bg.name">
-              </span>
-              <span class="ability">{{bg.name}}</span>
-              <span ng-repeat="detail in bg.details">
-                <br>
-                <span class="pull-right solar specialty" >
-                  <sa-motes mote-count="detail.value" mote-max="detail.value" />
-                </span>
-                <div class="specialty" >{{detail.name}}</div>
-              </span>
+            <li class="list-group-item panel-heading text-capitalize text-center" > <h4>Languages </h4> </li>
+            <li class="list-group-item" ng-repeat="language in character.languages">
+              <span class="ability">{{language}}</span>
             </li>
           </ul>
         </div>

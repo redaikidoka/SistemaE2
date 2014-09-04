@@ -563,8 +563,7 @@
           "max": 5,
           "value": 1,
           "caste": "eclipse",
-          "favored": false,
-          "languages": ["Low Realm"]
+          "favored": false
       },
       {
           "name": "ride",
@@ -671,57 +670,82 @@
             "value": 1
         }]
     },
+    "languages": ["Low Realm", "Guildtongue"],
     "charms": [{
-        "domain": "Solar",
-        "name": "Forceful Arrow",
-        "type": "Supplemental",
-        "keywords": ["combo-ok", "obvious", "knockback"],
-        "ability": "Archery",
-        "minimums": [{
-            "name": "Archery",
-            "value": 4
-        }, {
-            "name": "Essence",
-            "value": 2
-        }],
-        "prerequisites": [{
-            "name": "There Is No Wind"
-        }],
-        "cost": [{
-            "name": "essence",
-            "value": 3
-        }, {
-            "name": "willpower",
-            "value": 0
-        }],
-        "description": "insert bullshit here",
-        "tooltip": "Knock back a bitch"
-    }, {
         "domain": "Solar",
         "name": "There Is No Wind",
         "type": "Supplemental",
-        "keywords": ["combo-ok", "obvious", "knockback"],
+        "keywords": ["combo-ok"],
+        "duration": "instant",
         "ability": "Archery",
         "minimums": [{
             "name": "Archery",
             "value": 4
         }, {
             "name": "Essence",
-            "value": 2
+            "value": 1
         }],
         "prerequisites": [{
-            "name": "There Is No Wind"
+            "name": "Any Archery Excellency"
         }],
         "cost": [{
-            "name": "essence",
-            "value": 3
+            "essence": 3
         }, {
-            "name": "willpower",
-            "value": 0
+            "essence": 5,
+            "description": "If Solar's essence is 3 or higher, he or she can spend two additional motes to increase Range to their maximum visibility range."
         }],
         "description": "insert bullshit here",
         "tooltip": "Remove environment penalties"
 
+    }, {
+        "domain": "Solar",
+        "name": "Accuracy Without Distance",
+        "type": "Supplemental",
+        "keywords": ["combo-ok", "obvious"],
+        "duration": "instant",
+        "ability": "Archery",
+        "minimums": [{
+            "name": "Archery",
+            "value": 5
+        }, {
+            "name": "Essence",
+            "value": 3
+        }],
+        "prerequisites": [{
+            "name": "There Is No Wind"
+        }],
+        "cost": [[{
+            "name": "essence",
+            "value": 1
+        }, {
+            "name": "willpower",
+            "value": 1
+        }]],
+        "description": "insert bullshit here",
+        "tooltip": "Guarantees a hit"
+    }, {
+        "domain": "Solar",
+        "name": "Forceful Arrow",
+        "type": "Supplemental",
+        "keywords": ["combo-ok", "knockback", "obvious"],
+        "duration": "instant",
+        "ability": "Archery",
+        "minimums": [{
+            "name": "Archery",
+            "value": 4
+        }, {
+            "name": "Essence",
+            "value": 2
+        }],
+        "prerequisites": [{
+            "name": "There Is No Wind"
+        }],
+        "cost": [{
+            "name": "essence",
+            "value": 3
+        }],
+        "description": "insert bullshit here",
+        "tooltip": "Knock back a bitch"
     }]
   ,"virtues": {
     "flaw": {

@@ -161,6 +161,21 @@ angular.module('sistemaApp')
 			
 		}
 };})
+.directive("saCharm", function() {
+		return {
+			restrict: "AE",
+			scope: {
+				charm: '='
+				},
+			templateUrl: 'views/character/charm.html', 
+			link: function(scope, elem, attrs, ctrl ) {
+				//console.log("ability: " + scope.ability.name + " " + scope.ability.value + "/" + scope.ability.max);
+
+				if (scope.ability.excellencies) {
+					//console.log (  "E:" + scope.ability.excellencies.length );
+				}
+		}
+};})
 .directive("saAbilityFull", function() {
 		return {
 			restrict: "AE",
