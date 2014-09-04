@@ -19,23 +19,23 @@ angular
   ])
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/', {
+      .when('/#', {
         templateUrl: 'views/character.html',
         controller: 'CharacterCtrl'
       })
-      .when('/withquick', {
+      .when('#/withquick', {
         templateUrl: 'views/chracter2.html',
         controller: 'CharacterCtrl'
       })
-      .when('/about', {
+      .when('#/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
       })
-      .when('/quickview', {
+      .when('#/quickview', {
         templateUrl: 'views/quickview.html',
         controller: 'QuickviewCtrl'
       })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/#'
       });
   });

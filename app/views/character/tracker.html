@@ -2,10 +2,10 @@
 	<!-- Attributes panel -->
 	<header class="panel-heading">
 		<h2 class="panel-title text-uppercase">
-			<a data-toggle="collapse"  data-target="#status" class="glyphicon glyphicon-chevron-down"></a>
+			<a data-toggle="collapse"  data-target="#trackerbody" class="glyphicon glyphicon-chevron-down"></a>
 			<a name="status"></a>TRACKER</h2>
 	</header>
-	<div id="status" class="panel-body collapse in"><!-- Attribute Panel Body -->
+	<div id="trackerbody" class="panel-body collapse in"><!-- Attribute Panel Body -->
     <div class="container-fluid">
       <div class="row">
 		<div class="col-xs-12"> 
@@ -15,6 +15,13 @@
 					<sa-motes-badge mote-count="virtue.currentvalue" mote-max="virtue.value" stat-name="virtue.name"></sa-motes-badge>
 					<span class="stat">{{ virtue.name }}</span>
 				</li>
+				<li class="list-group-item panel-heading text-capitalize text-center" >  
+					<h4> <a data-toggle="collapse"  data-target="#limitnonsensetracker" class="glyphicon glyphicon-chevron-down pull-right darkblackshadow widget" ></a>Limit Break <br><span class="small darkblackshadow" style="color: white;" sa-motes mote-count="character.virtues.flaw.currentvalue" mote-max="character.virtues.flaw.value" /> </h4>
+				</li>
+				<div id="limitnonsensetracker" class="collapse out">
+				<li class="list-group-item"> <b>{{character.virtues.flaw.name}}</b> : {{character.virtues.flaw.trigger}} </li>
+
+				</div>
 			</ul>
 		</div> <!-- col -->
 
@@ -45,7 +52,7 @@
 	
  		<div class="col-xs-12"> 
 			<ul class="list-group">
-				<li class="list-group-item panel-heading text-capitalize text-center" > <h4>Health</h4> <h4> <span class="label" ng-class="{ 'label-primary':character.health.currentHealth == 0, 'label-success': character.health.currentHealth == -1 , 'label-warning': character.health.currentHealth == -2, 'label-danger': character.health.currentHealth == -4, 'label-default': character.health.currentHealth == -10 }">{{ character.health.currentHealth }}</span></h4></li>
+				<li class="list-group-item panel-heading text-capitalize text-center" > <h4>Health <span class="label" ng-class="{ 'label-primary':character.health.currentHealth == 0, 'label-success': character.health.currentHealth == -1 , 'label-warning': character.health.currentHealth == -2, 'label-danger': character.health.currentHealth == -4, 'label-default': character.health.currentHealth == -10 }">{{ character.health.currentHealth }}</span></h4></li>
 				<li class="list-group-item" > 
 					<span class="badge"> 
 						{{character.health.levels.length - character.health.damage.length}} / {{character.health.levels.length}}
@@ -57,12 +64,6 @@
 			</ul>
 		</div> <!-- col -->
 
-		<div class="col-xs-12"> 
-			<ul class="list-group">
-				<li class="list-group-item panel-heading text-capitalize text-center" > <h4>Limit Break <br/><span class="small darkblackshadow" style="color: white;" sa-motes mote-count="character.virtues.flaw.currentvalue" mote-max="character.virtues.flaw.value" /> </h4></li>
-				<li class="list-group-item"> <b>{{character.virtues.flaw.name}}</b> : {{character.virtues.flaw.trigger}} </li>
-			</ul>
-		</div> <!-- col -->
 
 
      </div><!-- row -->

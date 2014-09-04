@@ -53,12 +53,15 @@
 
  		<div class="col-sm-3 col-xs-12"> 
 			<ul class="list-group">
-				<li class="list-group-item panel-heading text-capitalize text-center" > <h4>Health <span class="label" ng-class="{ 'label-primary':character.health.currentHealth == 0, 'label-success': character.health.currentHealth == -1 , 'label-warning': character.health.currentHealth == -2, 'label-danger': character.health.currentHealth == -4, 'label-default': character.health.currentHealth == -10 }">{{ character.health.currentHealth }}</span></h4></li>
-				<li class="list-group-item" > 
-					<span class="badge"> 
+				<li class="list-group-item panel-heading text-capitalize text-center" > 					<span class="badge"> 
 						{{character.health.levels.length - character.health.damage.length}} / {{character.health.levels.length}}
-					</span>
-					<div><span class="label label-default">0</span> <span class="label label-danger">0</span> <span class="label label-danger">-1</span> <span class="label label-danger">-1</span> <span class="label label-warning">-1</span> <span class="label label-warning">-2</span> <span class="label label-success">-4</span> <span class="label label-success">I</span>
+					</span> <h4>Health <span class="label" ng-class="{ 'label-primary':character.health.currentHealth == 0, 'label-success': character.health.currentHealth == -1 , 'label-warning': character.health.currentHealth == -2, 'label-danger': character.health.currentHealth == -4, 'label-default': character.health.currentHealth == -10 }">{{ character.health.currentHealth }}</span></h4></li>
+				<li class="list-group-item" > 
+					<div class="text-center"><span class="label label-aggravated">0</span> <span class="label label-danger">0</span> <br>
+					<span class="label label-danger">-1</span> <span class="label label-danger">-1</span> <span class="label label-warning">-1</span> <br>
+					<span class="label label-warning">-2</span> <br>
+					<span class="label label-success">-4</span> <br>
+					<span class="label label-success">I</span><br>
 					</div>
 
 				</li>
