@@ -263,6 +263,18 @@ body {
     @extend .label-default;
     background-color: black;
   }
+
+  .panel-heading .toggler:before {
+    /* symbol for "opening" panels */
+    font-family: 'Glyphicons Halflings';  /* essential for enabling glyphicon */
+    content: "\e114 ";    /* adjust as needed, taken from bootstrap.css */
+  }
+
+  .panel-heading .toggler.collapsed:before {
+      /* symbol for "collapsed" panels */
+      content: "\e080 ";    /* adjust as needed, taken from bootstrap.css */
+  }
+
 }
 
 /*

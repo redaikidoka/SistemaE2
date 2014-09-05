@@ -11,7 +11,6 @@ angular.module('sistemaApp')
 		.controller('CharacterCtrl', ['$scope', '$http',
 			function($scope, $http) {
 
-
 				$scope.getCurrentHealth = function(health, damage) {
 
 					if (!health || !damage) { return 0;}

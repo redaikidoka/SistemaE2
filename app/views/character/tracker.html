@@ -2,8 +2,8 @@
 	<!-- Attributes panel -->
 	<header class="panel-heading">
 		<h2 class="panel-title text-uppercase">
-			<a data-toggle="collapse"  data-target="#trackerbody" class="glyphicon glyphicon-chevron-down"></a>
-			<a name="status"></a>TRACKER</h2>
+			<a data-toggle="collapse"  data-target="#trackerbody" class="toggler"> TRACKER</a>
+		</h2>
 	</header>
 	<div id="trackerbody" class="panel-body collapse in"><!-- Attribute Panel Body -->
     <div class="container-fluid">
@@ -15,10 +15,10 @@
 					<sa-motes-badge mote-count="virtue.currentvalue" mote-max="virtue.value" stat-name="virtue.name"></sa-motes-badge>
 					<span class="stat">{{ virtue.name }}</span>
 				</li>
-				<li class="list-group-item panel-heading text-capitalize text-center" >  
-					<h4> <a data-toggle="collapse"  data-target="#limitnonsensetracker" class="glyphicon glyphicon-chevron-down pull-right darkblackshadow widget" ></a>Limit Break <br><span class="small darkblackshadow" style="color: white;" sa-motes mote-count="character.virtues.flaw.currentvalue" mote-max="character.virtues.flaw.value" /> </h4>
+				<li class="list-group-item panel-heading text-capitalize " >  
+					<h4> <a data-toggle="collapse"  data-target="#limitnonsensetracker" class="toggler collapsed" > Limit Break</a> <br><span class="small darkblackshadow" style="color: white;" sa-motes mote-count="character.virtues.flaw.currentvalue" mote-max="character.virtues.flaw.value" /> </h4>
 				</li>
-				<div id="limitnonsensetracker" class="collapse out">
+				<div id="limitnonsensetracker" class="collapse out ">
 				<li class="list-group-item"> <b>{{character.virtues.flaw.name}}</b> : {{character.virtues.flaw.trigger}} </li>
 
 				</div>

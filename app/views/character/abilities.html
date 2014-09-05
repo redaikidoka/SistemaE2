@@ -3,11 +3,9 @@
 <article class="panel panel-default">
   <header class="panel-heading">
     <h2 class="panel-title text-uppercase">
-        <a name="abilities">
-            <a data-toggle="collapse" data-target="#abilities" class="glyphicon glyphicon-chevron-down"></a>
-        </a>Abilities</h2>
+      <a data-toggle="collapse" data-target="#abilities" class="toggler"> Abilities</a></h2>
   </header>
-  <div id="abilities" class="panel-body collapse in">
+  <div id="abilities" class="panel-body collapse in">         <a name="abilities"></a>
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-3 col-sm-4 col-xs-12" ng-repeat="casteability in character.abilities | orderBy:'caste' | unique:'caste'">

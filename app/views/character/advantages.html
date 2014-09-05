@@ -1,7 +1,8 @@
 <article class="panel panel-default">
   <header class="panel-heading">
     <h2 class="panel-title text-uppercase">
-      <a data-toggle="collapse" data-target="#advantages" class="glyphicon glyphicon-chevron-down pull-left"></a> Advantages</h2>
+      <a data-toggle="collapse" data-target="#advantages" class="toggler">
+      Advantages</a> </h2> 
   </header>
   <div id="advantages" class="panel-body collapse in">
     <div class="container-fluid">
@@ -27,7 +28,7 @@
 
         <div class="col-md-5">
           <ul class="list-group">
-            <li class="list-group-item panel-heading text-capitalize text-center" > <h4><span class="label label-default">{{character.charms.length}}</span> Charms</h4> </li>
+            <li class="list-group-item panel-heading text-capitalize text-center" > <h4>Charms</h4> <span class="label label-default">{{character.charms.length}}</span> </li>
             <li class="list-group-item" ng-repeat="charm in character.charms">
               <sa-charm charm="charm" ></sa-charm>
             </li>
