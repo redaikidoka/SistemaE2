@@ -691,7 +691,7 @@
         "cost": [{
             "essence": 3
         }, {
-            "essence": 5,
+            "essence": 5,            
             "description": "If Solar's essence is 3 or higher, he or she can spend two additional motes to increase Range to their maximum visibility range."
         }],
         "description": "insert bullshit here",
@@ -708,19 +708,16 @@
             "name": "Archery",
             "value": 5
         }, {
-            "name": "Essence",
+            "essence": 3,            
             "value": 3
         }],
         "prerequisites": [{
             "name": "There Is No Wind"
         }],
-        "cost": [[{
-            "name": "essence",
-            "value": 1
-        }, {
-            "name": "willpower",
-            "value": 1
-        }]],
+        "cost": [{
+            "essence": 1,            
+            "willpower": 1
+        }],
         "description": "insert bullshit here",
         "tooltip": "Guarantees a hit"
     }, {
@@ -741,11 +738,164 @@
             "name": "There Is No Wind"
         }],
         "cost": [{
-            "name": "essence",
-            "value": 3
+            "essence": 3
         }],
         "description": "insert bullshit here",
         "tooltip": "Knock back a bitch"
+    }, {
+        "domain": "Solar",
+        "name": "Body-Mending Meditation",
+        "type": "Supplemental",
+        "keywords": ["combo-ok"],
+        "duration": "until day ends",
+        "ability": "Resistance",
+        "minimums": [{
+            "name": "Resistance",
+            "value": 1
+        }, {
+            "name": "Essence",
+            "value": 1
+        }],
+        "prerequisites": [{
+            "name": "none"
+        }],
+        "cost": [{
+            "essence": 3
+        }],
+        "description": "insert bullshit here",
+        "tooltip": "Speeds up healing by factor of 10 or adds successes to a physician's roll."
+    }, {
+        "domain": "Solar",
+        "name": "Judge's Ear Technique",
+        "type": "Reflexive (Step 1)",
+        "keywords": ["combo-ok"],
+        "duration": "scene",
+        "ability": "Investigation",
+        "minimums": [{
+            "name": "Investigation",
+            "value": 2
+        }, {
+            "name": "Essence",
+            "value": 1
+        }],
+        "prerequisites": [{
+            "name": "Any Investigation Excellency"
+        }],
+        "cost": [{
+            "essence": 3
+        }],
+        "description": "insert bullshit here",
+        "tooltip": "Recognize all deliberate lies."
+    }, {
+        "domain": "Solar",
+        "name": "Shadow Over Water",
+        "type": "Reflexive (Step 2)",
+        "keywords": ["combo-ok"],
+        "duration": "instant",
+        "ability": "Dodge",
+        "minimums": [{
+            "name": "Dodge",
+            "value": 3
+        }, {
+            "name": "Essence",
+            "value": 1
+        }],
+        "prerequisites": [{
+            "name": "none"
+        }],
+        "cost": [{
+            "essence": 1
+       }],
+        "description": "insert bullshit here",
+        "tooltip": "Ignore all penalties to Dodge DV."
+    }, {
+        "domain": "Solar",
+        "name": "Seven Shadow Evasion",
+        "type": "Reflexive (Step 2)",
+        "keywords": ["combo-ok", "obvious"],
+        "duration": "instant",
+        "ability": "Dodge",
+        "minimums": [{
+            "name": "Dodge",
+            "value": 4
+        }, {
+            "name": "Essence",
+            "value": 2
+        }],
+        "prerequisites": [{
+            "name": "Shadow Over Water"
+        }],
+        "cost": [{
+            "essence": 3
+        }],
+        "description": "insert bullshit here",
+        "tooltip": "Dodge any expected attack."
+    }, {
+        "domain": "Solar",
+        "name": "Reflexive Sidestep Technique",
+        "type": "Reflexive (Step 2)",
+        "keywords": ["combo-ok"],
+        "duration": "instant",
+        "ability": "Dodge",
+        "minimums": [{
+            "name": "Dodge",
+            "value": 3
+        }, {
+            "name": "Essence",
+            "value": 1
+        }],
+        "prerequisites": [{
+            "name": "none"
+        }],
+        "cost": [{
+            "essence": 1
+        }],
+        "description": "insert bullshit here",
+        "tooltip": "Any unexpected attack becomes expected."
+    }, {
+        "domain": "Solar",
+        "name": "Easily Overlooked Presence Method",
+        "type": "Simple",
+        "keywords": ["combo-ok"],
+        "duration": "scene",
+        "ability": "Stealth",
+        "minimums": [{
+            "name": "Stealth",
+            "value": 3
+        }, {
+            "name": "Essence",
+            "value": 1
+        }],
+        "prerequisites": [{
+            "name": "none"
+        }],
+        "cost": [{
+            "essence": 3
+        }],
+        "description": "insert bullshit here",
+        "tooltip": "Opposed Awareness and Investigation checks automatically fail."
+    }, {
+        "domain": "Solar",
+        "name": "Invisible Statue Spirit",
+        "type": "Simple",
+        "keywords": ["combo-ok"],
+        "duration": "indefinite",
+        "ability": "Stealth",
+        "minimums": [{
+            "name": "Stealth",
+            "value": 3
+        }, {
+            "name": "Essence",
+            "value": 2
+        }],
+        "prerequisites": [{
+            "name": "Easily Overlooked Presence Method"
+        }],
+        "cost": [{
+            "essence": 5
+        }],
+        "description": "insert bullshit here",
+        "tooltip": "Become impossible to detect with the senses, save touch."
     }]
   ,"virtues": {
     "flaw": {

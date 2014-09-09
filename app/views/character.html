@@ -7,13 +7,13 @@
            <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas" sa-toggle-tracker>Tracker</button>
           </p>
-         <div class="col-xs-3 col-sm-3 placeholders text-center"> <!-- caste block -->
+         <div class="text-center pull-right" style="margin-right:10px; margin-left:10px;"> <!-- caste block -->
             <img ng-src="{{getIcon(character.caste)}}" class="img-responsive center-block " alt="{{character.caste}}" title="{{character.caste}}">
             <h4 class="text-uppercase text-center " style="margin-top: -22px; color: #333; text-shadow: 1px 1px 3px white;">{{character.caste }}</h4>
             <span class="text-muted text-center ">{{character.anima}}</span>
           </div> <!-- caste block -->
 
-          <div class="col-xs-6 col-sm-9 "> <!-- character info -->
+          <div style="clear:none;"> <!-- character info -->
            <h2>{{ character.name }}</h2>
             <dl class="dl-horizontal">
               <dt>Concept</dt>
@@ -26,9 +26,11 @@
           </div> <!-- character info -->
         </div> <!--  class="row" -->
 
-        <div class="row" ng-include="'views/character/attributes.html'" > </div>
+        <div class="row hidden-xs" ng-include="'views/character/attributes.html'" > </div>
+        <div class="row visible-xs" ng-include="'views/character/attributes-all.html'" > </div>
 
-        <div class="row " ng-include="'views/character/abilities.html'" ></div>
+        <div class="row hidden-xs " ng-include="'views/character/abilities.html'" ></div>
+        <div class="row visible-xs " ng-include="'views/character/abilities-all.html'" ></div>
 
         <div class="row" ng-include="'views/character/advantages.html'" ></div>
 

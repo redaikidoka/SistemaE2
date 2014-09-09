@@ -10,12 +10,12 @@
       <div class="row">
         <div class="col-md-3 col-sm-4 col-xs-12" ng-repeat="casteability in character.abilities | orderBy:'caste' | unique:'caste'">
             <ul class="list-group ">
-                <li class="list-group-item panel-heading text-capitalize text-center">
+                <li class="list-heading">
                     <h4>{{casteability}}</h4>
                 </li>
 
                 <li class="list-group-item" ng-repeat="ability in character.abilities | filter:{caste: casteability}"
-                  ng-class="{'list-group-item-warning': ability.favored}">
+                  > <!-- ng-class="{'list-group-item-warning': ability.favored}" -->
                     <span sa-ability-full ability="ability"></span>
                 </li>
             </ul>

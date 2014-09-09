@@ -3,6 +3,8 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
 
+$solar-back: #CDCB80 ;
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -192,10 +194,27 @@ body {
       1px -1px 0 #CDCB80,
       -1px 1px 0 #CDCB80,
       1px 1px 0 #CDCB80;
+
+      text-transform: uppercase;
   }
 
   .panel-heading {
-      background-color: #CDCB80 !important;
+      background-color: $solar-back !important;
+  }
+
+  .list-heading {
+    background-color: lighten($solar-back, 15%) !important;
+    padding: 3px;
+    text-align: center;
+    text-transform: capitalize;
+    list-style: none;
+    border-top-right-radius: 2em;
+    border-top-left-radius: 2em;
+  }
+
+  .list-heading h4 {
+    padding: 3px;
+    margin: 3px;
   }
 
   /* Popup heading zap-around navigator */
@@ -262,8 +281,37 @@ body {
   .label-aggravated {
     @extend .label-default;
     background-color: black;
+    border-color: black;
+    min-width:30px ;
+    display: inline-block;
   }
 
+  .label-lethal {
+    @extend .label-default;
+    background-color: #740014;
+    min-width:28px;
+    display: inline-block;
+  }
+
+  .label-bashing {
+    @extend .label-default;
+    background-color: #999;
+    min-width:26px;
+    display: inline-block;
+  }
+
+  .label-healthy {
+    @extend .label-default;
+    background-color: white;
+    color:#338445;
+    border: 1px solid #333;
+    min-width:24px;
+    display: inline-block;
+  }
+
+  .panel-heading h4 a.toggler { 
+    color: #333;
+  }
   .panel-heading .toggler:before {
     /* symbol for "opening" panels */
     font-family: 'Glyphicons Halflings';  /* essential for enabling glyphicon */
@@ -275,6 +323,38 @@ body {
       content: "\e080 ";    /* adjust as needed, taken from bootstrap.css */
   }
 
+  .panel-body {
+    padding: 10px 4px;
+  }
+  .panel-body .col-xs-12 {
+    padding: 0 7px;
+  }
+
+  ul.zebra-striped li:nth-child(even) {
+    background-color: #F2F2F2;
+  }
+
+  table.healthtable {
+    width: 100%;
+    line-height: 23px;
+    text-align: center;
+
+
+    td:nth-child(1) {
+      width: 33%;
+      color: #333;
+    }
+
+    td:nth-child(2) {
+      width: 66%;
+
+    }
+    
+    .johnsbox {
+      border: 2px #DDD solid;
+      background-color: #DDD;
+    }
+  }
 }
 
 /*

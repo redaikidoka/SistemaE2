@@ -5,18 +5,42 @@
 			<a data-toggle="collapse"  data-target="#status" class="toggler"> Status</a></h2>
 	</header>
 	<div id="status" class="panel-body collapse in"><!-- Attribute Panel Body --><a name="status"></a>
-    <div class="container-fluid">
-      <div class="row">
-		<div class="col-sm-3 col-xs-12"> 
+		<div class="container-fluid">
+			<div class="row">
+		<div class="col-sm-4 col-xs-12"> 
 			<ul class="list-group">
-				<li class="list-group-item panel-heading text-capitalize text-center" > <h4>Virtues</h4> </li>
+				<li class="list-heading" > <h4>Essence <span class="small darkblackshadow" style="color: white;" sa-motes mote-count="character.essence.value" mote-max="character.essence.value" /> </h4></li>
+				<li class="list-group-item" ng-repeat="pool in character.essence.pools" > 
+					<span class="badge"> 
+						{{pool.currentvalue}} / {{pool.value}}
+					</span>
+					<span class="stat">{{ pool.name }} Pool</span>
+					<div class="progress">
+						<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="pool.currentvalue" aria-valuemin="0" aria-valuemax="pool.value"  ng-style="{'width' : getProgress(pool.currentvalue, pool.value)  }" >
+							<span ng-show="pool.currentvalue > 0"> {{ pool.currentvalue }} </span>
+							<span ng-show="pool.currentvalue == 0" class="small"> None </span>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div> <!-- col -->
+
+
+		<div class="col-sm-4 col-xs-12"> 
+			<ul class="list-group">
+				<li class="list-heading" > <h4>Willpower <br><span class="small darkblackshadow" style="color: white;" sa-motes mote-count="character.willpower.currentvalue" mote-max="character.willpower.value" /> </h4></li>
+			</ul>
+
+
+			<ul class="list-group">
+				<li class="list-heading" > <h4>Virtues</h4> </li>
 				<li class="list-group-item" ng-repeat="virtue in character.virtues.bucket" ng-class="{'list-group-item-warning': virtue.flaw}"> 
 					<sa-motes-badge mote-count="virtue.value" mote-max="5" stat-name="virtue.name"></sa-motes-badge>
 					<span class="stat">{{ virtue.name }}</span>
 				</li>
 
 				<li class="list-group-item panel-heading text-capitalize text-center" >  
-					<h4> <a data-toggle="collapse"  data-target="#limitnonsense" class="glyphicon glyphicon-chevron-down pull-left darkblackshadow widget" ></a>Limit Break <br><span class="small darkblackshadow" style="color: white;" sa-motes mote-count="character.virtues.flaw.currentvalue" mote-max="character.virtues.flaw.value" /> </h4>
+					<h4> <a data-toggle="collapse"  data-target="#limitnonsense" class="toggler collapsed"> Limit Break</a> <br><span class="small darkblackshadow" style="color: white;" sa-motes mote-count="character.virtues.flaw.currentvalue" mote-max="character.virtues.flaw.value" /> </h4>
 				</li>
 				<div id="limitnonsense" class="collapse out">
 				<li class="list-group-item"> <b>{{character.virtues.flaw.name}}</b> : {{character.virtues.flaw.trigger}} </li>
@@ -25,52 +49,51 @@
 			</ul>
 		</div> <!-- col -->
 
-		<div class="col-sm-3 col-xs-12"> 
-			<ul class="list-group">
-				<li class="list-group-item panel-heading text-capitalize text-center" > <h4>Willpower <br><span class="small darkblackshadow" style="color: white;" sa-motes mote-count="character.willpower.currentvalue" mote-max="character.willpower.value" /> </h4></li>
-			</ul>
-		</div> <!-- col -->
 
-		<div class="col-sm-3 col-xs-12"> 
+		<div class="col-sm-4 col-xs-12"> 
 			<ul class="list-group">
-				<li class="list-group-item panel-heading text-capitalize text-center" > <h4>Essence <span class="small darkblackshadow" style="color: white;" sa-motes mote-count="character.essence.value" mote-max="character.essence.value" /> </h4></li>
-				<li class="list-group-item" ng-repeat="pool in character.essence.pools" > 
-					<span class="badge"> 
-						{{pool.currentvalue}} / {{pool.value}}
-					</span>
-					<span class="stat">{{ pool.name }} Pool</span>
-					<div class="progress">
-					  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="pool.currentvalue" aria-valuemin="0" aria-valuemax="pool.value"  ng-style="{'width' : getProgress(pool.currentvalue, pool.value)  }" >
-					  	<span ng-show="pool.currentvalue > 0"> {{ pool.currentvalue }} </span>
-					  	<span ng-show="pool.currentvalue == 0" class="small"> None </span>
-					  </div>
-					</div>
+				<!-- li class="list-group-item panel-heading text-capitalize text-center" 
+
+				<span class="label" ng-class="{ 'label-primary':character.health.currentHealth == 0, 'label-success': character.health.currentHealth == -1 , 'label-warning': character.health.currentHealth == -2, 'label-danger': character.health.currentHealth == -4, 'label-default': character.health.currentHealth == -10 }">{{ character.health.currentHealth }}</span>-->
+
+				<li class="list-heading" >
+					<h4>Health <span class="label" ng-class="{ 'label-primary':character.health.currentHealth == 0, 'label-success': character.health.currentHealth == -1 , 'label-warning': character.health.currentHealth == -2, 'label-danger': character.health.currentHealth == -4, 'label-default': character.health.currentHealth == -10 }">{{ character.health.currentHealth }}</span>
+					</h4>
 				</li>
-			</ul>
-		</div> <!-- col -->
-
-
- 		<div class="col-sm-3 col-xs-12"> 
-			<ul class="list-group">
-				<li class="list-group-item panel-heading text-capitalize text-center" > 					<span class="badge"> 
-						{{character.health.levels.length - character.health.damage.length}} / {{character.health.levels.length}}
-					</span> <h4>Health <span class="label" ng-class="{ 'label-primary':character.health.currentHealth == 0, 'label-success': character.health.currentHealth == -1 , 'label-warning': character.health.currentHealth == -2, 'label-danger': character.health.currentHealth == -4, 'label-default': character.health.currentHealth == -10 }">{{ character.health.currentHealth }}</span></h4></li>
 				<li class="list-group-item" > 
-					<div class="text-center"><span class="label label-aggravated">0</span> <span class="label label-danger">0</span> <br>
+
+
+					<span class="label label-aggravated">0</span> <span class="label label-lethal">0</span> 
+					<span class="label label-lethal">-1</span> <span class="label label-lethal">-1</span> <span class="label label-bashing">-1</span> 
+					<span class="label label-bashing">-2</span> 
+					<span class="label label-healthy">-4</span> 
+					<span class="label label-healthy">I</span>
+
+
+
+					<div class="text-center" style="display:none;"><span class="label label-aggravated">0</span> <span class="label label-danger">0</span> <br>
 					<span class="label label-danger">-1</span> <span class="label label-danger">-1</span> <span class="label label-warning">-1</span> <br>
 					<span class="label label-warning">-2</span> <br>
 					<span class="label label-success">-4</span> <br>
 					<span class="label label-success">I</span><br>
 					</div>
-
+					<br><br>
+					<table class="healthtable">
+						<tr ><td>0</td><td class="text-center "><span class="glyphicon glyphicon-stop johnsbox" style="background-color: black; color: black;"></span> <span class="glyphicon glyphicon-remove johnsbox"></span></td></tr>
+						<tr><td>-1</td><td class="text-center" ><span class="glyphicon glyphicon-remove johnsbox"></span> <span class="glyphicon glyphicon-remove  johnsbox"></span> <span class="glyphicon glyphicon-pencil johnsbox"></span></td></tr>
+						<tr><td>-2</td><td class="text-center"><span class="glyphicon glyphicon-pencil johnsbox"></span> </td></tr>
+						<tr><td>-4</td><td class="text-center"><span class="glyphicon glyphicon-stop  darkblackshadow" style="color:#A44D4E;" ></span></td></tr>
+						<tr><td>I</td><td class="text-center"><span class="glyphicon glyphicon-stop  darkblackshadow" style="color:#A44D4E;" ></span></tr>
+					</table>
+					
 				</li>
 			</ul>
 		</div> <!-- col -->
 
 
 
-     </div><!-- row -->
-    </div> <!-- container-fluid -->
+		 </div><!-- row -->
+		</div> <!-- container-fluid -->
 
 	</div><!--  Panel Body -->
 </article><!--  panel -->

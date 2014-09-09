@@ -3,19 +3,17 @@
 <article class="panel panel-default">
   <header class="panel-heading">
     <h2 class="panel-title text-uppercase">
-        <a name="abilities">
-            <a data-toggle="collapse" data-target="#abilities" class="glyphicon glyphicon-chevron-down"></a>
-        </a>Abilities</h2>
+        <a data-toggle="collapse" data-target="#abilities-all" class="toggler"></a>
+        Abilities</h2>
   </header>
-  <div id="abilities" class="panel-body collapse in">
+  <div id="abilities-all" class="panel-body collapse in"> <a name="abilities"></a>
     <div class="container-fluid">
-      <div class="row">
-        <div class="col-lg-6 col-xs-12" >
-            <ul class="list-group ">
-
-                <li class="list-group-item" ng-repeat="ability in character.abilities | orderBy:'name'"
-                  ng-class="{'list-group-item-warning': ability.favored}">
-                    <span sa-ability-full ability="ability"></span>
+      <div class="row ">
+        <div class="col-xs-12" >
+            <ul class="list-group zebra-striped " style="column-count:2; -webkit-column-count: 2;">
+                <li class="list-group-item" ng-repeat="ability in character.abilities | orderBy:'name' | filter:{value:'!0'} "
+                 > <!--   ng-class="{'list-group-item-warning': ability.favored}" -->
+                    <span sa-ability-full ability="ability" ></span>
                 </li>
             </ul>
         </div><!-- col -->

@@ -1,0 +1,26 @@
+<article class="panel panel-default">
+  <!-- Attributes panel -->
+  <header class="panel-heading">
+    <h2 class="panel-title text-uppercase">
+      <a data-toggle="collapse" data-target="#attributes-all" class="toggler">
+      Attributes</a></h2>
+  </header>
+  <div id="attributes-all" class="panel-body collapse in"> <a name="attributes"></a>
+    <!-- Attribute Panel Body -->
+    <div class="container-fluid">
+      <div class="row" style="column-count:2; -webkit-column-count: 2;">
+<!--         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" >-->
+	      <ul class="list-group zebra-striped">
+            <li class="list-group-item" ng-repeat="attribute in character.attributes ">
+                <sa-attribute attribute="attribute" ></sa-attribute>
+            </li>
+          </ul>
+        <!--</div> col -->
+      </div> <!-- row -->
+    </div>
+    <!-- container-fluid -->
+
+  </div>
+  <!-- Attribute Panel Body -->
+</article>
+<!-- Attributes panel -->

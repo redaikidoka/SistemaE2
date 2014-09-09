@@ -1,7 +1,7 @@
 <article class="panel panel-default">
   <!-- Attributes panel -->
   <header class="panel-heading">
-    <h2 class="panel-title text-uppercase">
+    <h2 class="panel-title">
       <a data-toggle="collapse" data-target="#attributes" class="toggler">
       Attributes</a></h2>
   </header>
@@ -10,8 +10,8 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" ng-repeat="attsection in character.attributes  | unique:'section'">
-          <ul class="list-group">
-            <li class="list-group-item panel-heading text-capitalize text-center">
+          <ul class="list-group ">
+            <li class="list-heading ">
               <h4>{{attsection}}</h4>
             </li>
             <li class="list-group-item" ng-repeat="attribute in character.attributes | filter:{section: attsection}">

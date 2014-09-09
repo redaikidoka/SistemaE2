@@ -7,9 +7,17 @@
   <div id="advantages" class="panel-body collapse in">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-3">
+
+        <div class="col-sm-6 col-md-4">
           <ul class="list-group">
-            <li class="list-group-item panel-heading text-capitalize text-center" > <h4>Backgrounds</h4> </li>
+            <li class="list-heading" > <h4>Languages </h4> </li>
+            <li class="list-group-item" ng-repeat="language in character.languages">
+              <span class="ability">{{language}}</span>
+            </li>
+          </ul>
+
+         <ul class="list-group">
+            <li class="list-heading" > <h4>Backgrounds</h4> </li>
             <li class="list-group-item" ng-repeat="bg in character.backgrounds.bucket">
               <span class="badge">
                 <sa-motes mote-count="bg.value" mote-max="bg.value" stat-name="bg.name">
@@ -24,32 +32,21 @@
               </span>
             </li>
           </ul>
-        </div>
+       </div>
 
-        <div class="col-md-5">
+
+        <div class="col-xs-12 col-sm-6 col-md-8">
           <ul class="list-group">
-            <li class="list-group-item panel-heading text-capitalize text-center" > <h4>Charms</h4> <span class="label label-default">{{character.charms.length}}</span> </li>
+            <li class="list-heading" > <h4> <span class="label label-default">{{character.charms.length}}</span>  Charms</h4> </li>
             <li class="list-group-item" ng-repeat="charm in character.charms">
               <sa-charm charm="charm" ></sa-charm>
             </li>
-
-          </ul>
-
-        </div>
-
-        <div class="col-md-3">
-          <ul class="list-group">
-            <li class="list-group-item panel-heading text-capitalize text-center" > <h4>Languages </h4> </li>
-            <li class="list-group-item" ng-repeat="language in character.languages">
-              <span class="ability">{{language}}</span>
-            </li>
           </ul>
         </div>
 
-      </div>
-      <!-- row -->
-    </div>
-    <!-- container-fluid -->
-  </div>
-  <!-- panel-body -->
+
+
+      </div> <!-- row -->
+    </div>  <!-- container-fluid -->
+  </div><!-- panel-body -->
 </article>
