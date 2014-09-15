@@ -2,24 +2,27 @@
       <div class="row">
 		<div class="col-xs-12"> 
 			<ul class="list-group">
-			<li class="list-group-item panel-heading text-capitalize text-center" > <h4>Virtues</h4> </li>
+			<li class="list-group-item list-heading text-capitalize text-center" > <h4> <a data-toggle="collapse"  data-target="#trackervirtues" class=" collapsed " style="color:#333;" >Virtues</h4> </li>
+				<div id="trackervirtues"  class="collapse out ">
 				<li class="list-group-item" ng-repeat="virtue in character.virtues.bucket" ng-class="{'list-group-item-warning': virtue.flaw}"> 
 					<sa-motes-badge mote-count="virtue.currentvalue" mote-max="virtue.value" stat-name="virtue.name"></sa-motes-badge>
 					<span class="stat">{{ virtue.name }}</span>
 				</li>
-				<li class="list-group-item panel-heading text-capitalize text-center" >  
+				</div>
+				<li class="list-group-item list-heading solo text-capitalize text-center" >  
 					<h4> <a data-toggle="collapse"  data-target="#limitnonsensetracker" class=" collapsed " style="color:#333;" > Limit Break</a> <br><span class="small darkblackshadow" style="color: white;" sa-motes mote-count="character.virtues.flaw.currentvalue" mote-max="character.virtues.flaw.value" /> </h4>
 				</li>
 				<div id="limitnonsensetracker" class="collapse out ">
 				<li class="list-group-item"> <b>{{character.virtues.flaw.name}}</b> : {{character.virtues.flaw.trigger}} </li>
-
 				</div>
+				<li class="list-heading bottom">&nbsp;</li>
 			</ul>
 		</div> <!-- col -->
 
 		<div class="col-xs-12"> 
 			<ul class="list-group">
-				<li class="list-group-item panel-heading text-capitalize text-center" > <h4>Essence <span class="small darkblackshadow" style="color: white;" sa-motes mote-count="character.essence.value" mote-max="character.essence.value" /> </h4></li>
+				<li class="list-group-item list-heading text-capitalize text-center" > <h4> <a data-toggle="collapse"  data-target="#trackerEssence" class=" " style="color:#333;" >Essence </a> <span class="small darkblackshadow" style="color: white;" sa-motes mote-count="character.essence.value" mote-max="character.essence.value" /> </h4></li>
+				<div id="trackerEssence" class="collapse in ">
 				<li class="list-group-item" ng-repeat="pool in character.essence.pools" > 
 					<span class="badge"> 
 						{{pool.currentvalue}} / {{pool.value}}
@@ -32,19 +35,21 @@
 					  </div>
 					</div>
 				</li>
+				</div>
+				<li class="list-heading bottom">&nbsp;</li>
 			</ul>
 		</div> <!-- col -->
 
 		<div class=" col-xs-12"> 
 			<ul class="list-group">
-				<li class="list-group-item panel-heading text-capitalize text-center" > <h4>Willpower <br> <span class="small darkblackshadow" style="color: white;" sa-motes mote-count="character.willpower.currentvalue" mote-max="character.willpower.value" /> </h4></li>
+				<li class="list-group-item list-heading pill text-capitalize text-center" > <h4>Willpower <br> <span class="small darkblackshadow" style="color: white;" sa-motes mote-count="character.willpower.currentvalue" mote-max="character.willpower.value" /> </h4></li>
 			</ul>
 		</div> <!-- col -->
 
 	
  		<div class="col-xs-12"> 
 			<ul class="list-group">
-				<li class="list-group-item panel-heading text-capitalize text-center" > <h4>Health <span class="label" ng-class="{ 'label-primary':character.health.currentHealth == 0, 'label-success': character.health.currentHealth == -1 , 'label-warning': character.health.currentHealth == -2, 'label-danger': character.health.currentHealth == -4, 'label-default': character.health.currentHealth == -10 }">{{ character.health.currentHealth }}</span></h4></li>
+				<li class="list-group-item list-heading text-capitalize text-center" > <h4>Health <span class="label" ng-class="{ 'label-primary':character.health.currentHealth == 0, 'label-success': character.health.currentHealth == -1 , 'label-warning': character.health.currentHealth == -2, 'label-danger': character.health.currentHealth == -4, 'label-default': character.health.currentHealth == -10 }">{{ character.health.currentHealth }}</span></h4></li>
 				<li class="list-group-item" > 
 
 					<div><span class="label label-aggravated">0</span> <span class="label label-danger">0</span> 
