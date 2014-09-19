@@ -44,6 +44,14 @@
           </ul>
         </div>
 
+        <div class="col-xs-12 col-sm-6 col-md-8" ng-show="character.combos.length > 0">
+          <ul class="list-group">
+            <li class="list-heading" > <h4> <span class="label label-default">{{character.combos.length}}</span>  Combos</h4> </li>
+            <li class="list-group-item" ng-repeat="combo in character.combos">
+              <sa-combo combo="combo" ></sa-combo>
+            </li>
+          </ul>
+        </div>
 
 
       </div> <!-- row -->

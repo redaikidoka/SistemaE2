@@ -39,6 +39,10 @@ angular
         templateUrl: 'views/combat.html',
         controller: 'CombatCtrl'
       })
+      .when('/charedit', {
+        templateUrl: 'views/charedit.html',
+        controller: 'ChareditCtrl'
+      })
       .otherwise({
         redirectTo: '/#'
       });

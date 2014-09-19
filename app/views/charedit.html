@@ -1,0 +1,44 @@
+<section id="character" class="container-fluid">
+  <div class="main">
+      <!-- CHARACTER SHEET AREA -->
+      <div class="row">
+          <div class="text-center pull-right" style="margin-right:10px; margin-left:10px;">
+              <!-- caste block -->
+              <img ng-src="{{getIcon(character.caste)}}" class="img-responsive center-block " alt="{{character.caste}}" title="{{character.caste}}">
+              <h4 class="text-uppercase text-center " style="margin-top: -22px; color: #333; text-shadow: 1px 1px 3px white;">{{character.caste }}</h4>
+              <span class="text-muted text-center ">{{character.anima}}</span>
+          </div>
+          <!-- caste block -->
+
+          <div style="clear:none;">
+              <!-- character info -->
+              <form >
+              <h2>{{ character.name }}</h2>
+              <dl class="dl-horizontal">
+                  <dt>Concept</dt>
+                  <dd><input type="text" ng-model="character.concept" /></dd>
+                  <dt>Motivation</dt>
+                  <dd><input type="text" ng-model="character.motivation" /></dd>
+                  <dt>Anima Banner</dt>
+                  <dd><input type="text" ng-model="character.banner" /></dd>
+              </dl>
+
+              </form>
+          </div>
+          <!-- character info -->
+      </div>
+      <!--  class="row" -->
+<!-- 
+      <div class="row hidden-xs" ng-include="'views/character/attributes.html'"></div>
+      <div class="row visible-xs" ng-include="'views/character/attributes-all.html'"></div>
+
+      <div class="row hidden-xs " ng-include="'views/character/abilities.html'"></div>
+      <div class="row visible-xs " ng-include="'views/character/abilities-all.html'"></div>
+
+      <div class="row" ng-include="'views/character/advantages.html'"></div>
+
+      <div class="row " ng-include="'views/character/status.html'"></div>
+-->
+  
+    </div>  <!-- main -->
+</section>

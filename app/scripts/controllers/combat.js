@@ -7,7 +7,7 @@
  * # CombatCtrl
  * Controller of the sistemaE2App
  */
-angular.module('sistemaE2App')
+angular.module('sistemaApp')
   .controller('CombatCtrl', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',

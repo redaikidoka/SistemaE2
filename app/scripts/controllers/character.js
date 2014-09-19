@@ -18,7 +18,7 @@ angular.module('sistemaApp')
 					return health[damage.length];
 				}
 
- 				$scope.data = {};
+				$scope.data = {};
 
 				$http.get('characters/ash.json')
 						.success(function (data) {
@@ -170,12 +170,26 @@ angular.module('sistemaApp')
 			link: function(scope, elem, attrs, ctrl ) {
 				//console.log("ability: " + scope.ability.name + " " + scope.ability.value + "/" + scope.ability.max);
 
-				if (scope.ability.excellencies) {
+				if (scope.ability.charms) {
 					//console.log (  "E:" + scope.ability.excellencies.length );
 				}
 		}
 };})
-.directive("saAbilityFull", function() {
+.directive("saCombo", function() {
+		return {
+			restrict: "AE",
+			scope: {
+				combo: '='
+				},
+			templateUrl: 'views/character/combo.html', 
+			link: function(scope, elem, attrs, ctrl ) {
+				//console.log("ability: " + scope.ability.name + " " + scope.ability.value + "/" + scope.ability.max);
+
+				if (scope.ability.combos) {
+					//console.log (  "E:" + scope.ability.excellencies.length );
+				}
+		}
+};}).directive("saAbilityFull", function() {
 		return {
 			restrict: "AE",
 			scope: {
